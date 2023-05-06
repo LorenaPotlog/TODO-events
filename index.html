@@ -19,15 +19,23 @@
     <meta name="theme-color" content="#ffffff">
         
 
-    <link rel="stylesheet" href="TODO events\style.css" type="text/css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <!-- <link rel="stylesheet" href="TODO events\style.css" type="text/css" /> -->
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+
 
     </head>
 
     <body>
     
     <header class="c1" id="h1" >
-        <h1>TODO <span>events</span><img id="logo" src="./resurse/peony.jpg" width="100" height="80"></h1>
+        <h1>TODO <span>events</span></h1>
+            <picture>
+                <source srcset="./resurse/logo/peony-80.jpg" media="(max-width:700px)"/>
+                <source srcset="./resurse/logo/peony-100.jpg" media="(max-width:1200px)"/>
+                <img src="./resurse/logo/peony-150.jpg" alt="logo"/>
+            </picture> 
     </header>
    
 
@@ -36,13 +44,14 @@
         <ul class="menu">
             <li><div>Home</div>
                 <ul>
-                    <li><a href="welcome">Welcome</a></li>
-                    <li><a href="#team">The team</a></li>
+                    <li><a href="#welcome">Welcome</a></li>
                     <li><a href="#bits-and-pieces">Bits and pieces:A glimpse into what we do</a></li>
+                    <li><a href="#team">The team</a></li>
                     <li><a href="#news">News about TODO's team</a></li> 
                     <li><a href="#office-schedule">Our office is open!</a></li>
-                    <li><a href="#fqa">FQA</a></li>
                     <li><a href="#announcements">Announcements</a></li>
+                    <li><a href="#fqa">FQA</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>            
             
             </li>
@@ -59,7 +68,7 @@
             
             <li><div>Services</div>
                 <ul>
-                    <li><a href="http://www.google.com">Food & Beverages</a></li>
+                    <li><a href="#">Food & Beverages</a></li>
                     <li><a href="#">Photo & Video</a></li>
                     <li><a href="#">Music</a></li>
                     <li><a href="#">Locations</a></li>
@@ -70,7 +79,8 @@
 
             <li><div>Portfolio & Testimonials</div>
                 <ul>
-                    <li><a href="http://www.google.com">Video</a></li>
+                    <li><a href="#">3D Tur</a></li>
+                    <li><a href="#">Photos & Videos</a></li>
                     <li><a href="#">Testimonials</a></li>
                 </ul>
             </li>
@@ -96,63 +106,28 @@
                 <div class="intro-oferte"><div>Wedding? </div><div>Birthday?</div><div>Gender reveal? </div><div>Corporate event?</div></div>
                 <p>Or anything else special that you would like to celebrate?</p>
             </div>
-            <hr class="prajituri"/>
-            <div id="container-video">
-                <div id="centrare-video">
-                    <div id="clip-video">
-                        <div id="stil-video">
+            <hr/>
+            <div>
+                            <video width="320" height="240"  playsinline autoplay loop muted>
+                                <source src="./resurse/video/celebration.mp4" type="video/mp4">
+                            </video>
+                            <video width="320" height="240"  playsinline autoplay loop muted>
+                                <source src="./resurse/video/celebration.mp4" type="video/mp4">
+                            </video>
+                            <video width="320" height="240"  playsinline autoplay loop muted>
+                                <source src="./resurse/video/celebration.mp4" type="video/mp4">
+                            </video>
                             <video width="320" height="240"  playsinline autoplay loop muted>
                                 <source src="./resurse/video/celebration.mp4" type="video/mp4">
                             </video>
                         </div>
-                    </div>
-                </div>
-            </div>
+                        <hr/>
+
             </section>
-            
-            <section id="news">
-                <h2>News about TODO's team</h2>
-                
-                <article>
-                    <h3 id="h3">Dream wedding</h3>
-                    <p><em>Dream</em> wedding. Who doesn't want to hear that? Who doesn't want to have that?</p>
-                    <p>We are proud to say we helped Mihai & Mirela make their dream come true.
-                        They had an amazing time in our favourite <b>location</b> - MPalace - in Bucharest, with their family and friends.
-                    </p>
-                    <p>You can find more about it <a href="http://www.salonmireasa.ro/jurnal/item/interviul-lunii-minunata-geta-ungureanu.html " target="_blank">here,</a>
-                         in the interview taken by our lead - Geta Ungureanu.</p>
-                </article>
-                
-                <article>
-                    <h3 id="h3">"Our team is stronger than ever!"</h3>
-                    <p>This is what we heard on a sunnny Monday morning. Rick, the manager of Emag, just got back with feedback about the teambuilding we organized for his team this weekend.</p>
-                    <p> Not only we were very pleased to hear it, but Emag has been working with TODO events for a very long time, so keeping our customer <em>happy</em> and <em>loyal</em> is one of our top priorities</p>
-                    <p> The team, consisting of 20 people, had a nice 4 days trip to Poiana Brasov, a mountain location in Romania. They stayed at Mariotte and had all meals included, and an extra special dinner</p>
-                    <p> We organized different activities, including personalized trainings but also fun ones such as: </p>
-                    <ol>
-                        <li>Ski and snowboard</li>
-                        <li>Swimming and jacuzzi</li>
-                        <li>Pasta cooking class</li>
-                        <li>Board games night</li>
-                    </ol>
-                    <p>Overall, everybody was very pleased, or as we say in Romania: <i lang="ro">Chef pe cinste</i>. See you soon Rick!</p>
-                    
-                </article>
-                <article>
-                    <h3 class="h3">Article 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
-                    <ol>
-                        <li>Suspendisse tempus imperdiet elit in.</li>
-                        <li>Quisque feugiat, mi eget condimentum</li>
-                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
-                        <li>Aenean imperdiet lorem vitae velit porta</li>
-                    </ol>
-                    
-            </section>
-            
+
             <section id="bits-and-pieces">
                 <h2>Bits and pieces: A glimpse into what we do</h2>
-                <p>A very small brief in what we do</p>
+                <p> Have you ever dream about enjoying your special day <s> but you also think about all the effort </s> ? We can make it happen. See it for yourself! </p>
                 <section>
                     <h3>Weddings</h3>
                     <p>Our dearest and most delicate type of event we plan, and we love to do it!</p>
@@ -212,7 +187,81 @@
                         <li>Festivals</li>
                         <li>TED talks</li>
                     </ul>
+                    <div class="taburi-iframe">
+                        <a href="https://www.youtube.com/embed/TEjYZpl0Z5E", target="ifr-video" style="text-decoration:none">Gender reveal</a>
+                        <a href="https://www.youtube.com/embed/fq2CdnfijhQ", target="ifr-video" style="text-decoration:none">Wedding</a>
+                        <a href="https://www.youtube.com/embed/DjkuekgddLw", target="ifr-video" style="text-decoration:none">Corporate event</a><br/>
+                        </div>
+                        <div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OUB6zKc-Tos" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+                    </div>
                 </section>
+            </section>
+
+            <section id="team">
+                <h2>The team</h2> 
+
+                <p>Friendly faces everywhere. Meet the <abbr title="TODO events">TDe</abbr> team!</p>
+                
+            <figure>
+                <img src="./resurse/team/team-lead.jpg" height=200px width=150px alt="logo">
+                <figcaption>Our team lead</figcaption>
+            </figure>
+
+            <figure>
+                <img src="./resurse/team/director.jpg" height=200px width=150px alt="logo">
+            <figcaption>Our director</figcaption>
+            </figure>
+            <figure>
+                <img src="./resurse/team/SEO.jpg" height=200px width=150px alt="logo">
+            <figcaption>Our SEO</figcaption>
+            </figure>
+            <figure>
+                <img src="./resurse/team/assistant.jpg" height=200px width=150px alt="logo">
+                <img src="./resurse/team/second-assistant.jpg" height=200px width=150px alt="logo">
+                <figcaption>Our assistants</figcaption>
+            </figure>
+            </section>
+            
+            <section id="news">
+                <h2>News about TODO's team</h2>
+                
+                <article>
+                    <h3 id="h3">Dream wedding</h3>
+                    <p><em>Dream</em> wedding. Who doesn't want to hear that? Who doesn't want to have that?</p>
+                    <p>We are proud to say we helped Mihai & Mirela make their dream come true.
+                        They had an amazing time in our favourite <b>location</b> - MPalace - in Bucharest, with their family and friends.
+                    </p>
+                    <p>You can find more about it <a href="http://www.salonmireasa.ro/jurnal/item/interviul-lunii-minunata-geta-ungureanu.html " target="_blank">here,</a>
+                         in the interview taken by our lead - Geta Ungureanu.</p>
+                </article>
+                
+                <article>
+                    <h3 id="h3">"Our team is stronger than ever!"</h3>
+                    <p>This is what we heard on a sunnny Monday morning. Rick, the manager of Emag, just got back with feedback about the teambuilding we organized for his team this weekend.</p>
+                    <p> Not only we were very pleased to hear it, but Emag has been working with TODO events for a very long time, so keeping our customer <em>happy</em> and <em>loyal</em> is one of our top priorities</p>
+                    <p> The team, consisting of 20 people, had a nice 4 days trip to Poiana Brasov, a mountain location in Romania. They stayed at Mariotte and had all meals included, and an extra special dinner</p>
+                    <p> We organized different activities, including personalized trainings but also fun ones such as: </p>
+                    <ol>
+                        <li>Ski and snowboard</li>
+                        <li>Swimming and jacuzzi</li>
+                        <li>Pasta cooking class</li>
+                        <li>Board games night</li>
+                    </ol>
+                    <p>Overall, everybody was very pleased, or as we say in Romania: <i lang="ro">Chef pe cinste</i>. See you soon Rick!</p>
+                    
+                </article>
+                <article>
+                    <h3 class="h3">Article 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
+                    <ol>
+                        <li>Suspendisse tempus imperdiet elit in.</li>
+                        <li>Quisque feugiat, mi eget condimentum</li>
+                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
+                        <li>Aenean imperdiet lorem vitae velit porta</li>
+                    </ol>
+                    
             </section>
            
             <section id="office-schedule">
@@ -263,37 +312,8 @@
                 </table> 
             </section>
             
-            <section id="team">
-                <h2>The team</h2> 
+    
 
-                <p>Friendly faces everywhere. Meet the <abbr title="TODO events">TDe</abbr> team!</p>
-                
-            <figure id="fig1" class="fg-img">
-                <img src="./resurse/team/team-lead.jpg" alt="logo">
-                <figcaption>Our team lead</figcaption>
-            </figure>
-
-            <picture>
-                <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                <source srcset="./resurse/imagini/macarons-200x200.jpg" media="(max-width:700px)"/>
-                <source srcset="./resurse/imagini/macarons.jpg" media="(max-width:1200px)"/>
-                <img src="./resurse/imagini/macarons-640x360.jpg" alt="text"/>
-            </picture> // de verificat pentru marime diferita
-
-
-            <figure id="fig2" class="fg-img">
-            <img src="./resurse/team/director.jpg" alt="logo">
-            <figcaption>Our director</figcaption>
-            </figure>
-            <figure  id="fig3" class="fg-img">
-            <img src="./resurse/team/SEO.jpg" alt="logo">
-            <figcaption>Our SEO</figcaption>
-            </figure>
-            <figure  id="fig3" class="fg-img">
-                <img src="./resurse/team/assistant.jpg" alt="logo">
-                <img src="./resurse/team/second-assistant.jpg" alt="logo">
-                <figcaption>Our assistants</figcaption>
-                
             
             <section id="announcements">
                 <h2>Announcements</h2> <p><time datetime="2023-01-03">3 January 2023: </time><strong>Awarded best event organizer in Bucharest for 2022!</strong></p>
@@ -359,33 +379,21 @@
                 </details> 
             </section>
 
-        </div>
-        
-        </section>
-        <section id="retete">
-            <h2>Portfolio</h2>
-            <p> Have you ever dream about enjoying your special day <s> but you also think about all the effort </s> ? We can make it happen. See it for yourself! </p>
-            <div class="taburi-iframe">
-            <a href="https://www.youtube.com/embed/TEjYZpl0Z5E", target="ifr-video" style="text-decoration:none">Gender reveal</a>
-            <a href="https://www.youtube.com/embed/fq2CdnfijhQ", target="ifr-video" style="text-decoration:none">Wedding</a>
-            <a href="https://www.youtube.com/embed/DjkuekgddLw", target="ifr-video" style="text-decoration:none">Corporate event</a><br/>
-            </div>
-            <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OUB6zKc-Tos" title="YouTube video player" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
-        </div>
-    <footer>
-        <br>
+    
+    
+        <footer>
+            <section id="contact">
+                <h2>Contact</h2>
         <div id="contact">
         <address>	    
-        <a href="tel:+407256222450" class="fa-regular fa-phone">Call us</a>
-	    <a href="mailto:lorena.potlog@yahoo.com" >Email us</a>
-        <a href="skype:lorenapotlog?chat"> 24/7 assistance (via Skype)</a>
-        <p>Meet us @ Academy street no. 14, 010014, Bucharest</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8843011393105!2d26.097011775875163!3d44.43553547107589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1682778737477!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> //verificare
+        <a href="tel:+407256222450" class="fa-thin fa-phone">Call us</a>
+	    <a href="mailto:lorena.potlog@yahoo.com" class="fa-thin fa-envelope" >Email us</a>
+        <a href="skype:lorenapotlog?chat" class="fa-thin fa-comments"> 24/7 assistance (via Skype)</a>
+        <p class="fa-thin fa-location-dot">Meet us @ Academy street no. 14, 010014, Bucharest</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8843011393105!2d26.097011775875163!3d44.43553547107589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1682778737477!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</address>
         
-        <a href="#" title="scroll up" id="link-top"><div id="triangle">Go up</div></a>
+        <a href="#" title="scroll up"><div>Go up</div></a>
 
         <br>
         <small>TODO events &reg;</small>
