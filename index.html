@@ -21,10 +21,17 @@
     <meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- <link rel="stylesheet" href="TODO events\style.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" /> -->
-    <!-- <script src="https://kit.fontawesome.com/2cf2b179fe.js" crossorigin="anonymous"></script> -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./resurse/css/reset.css" >
+    <link rel="stylesheet" type="text/css" href="./resurse/css/style-1500.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/css/style-1000.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/css/style-700.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/css/table.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -40,14 +47,15 @@
     </header>
 
     <nav>
-        <ul>
+        <ul class="menu">
             <li>
-                <div>Home</div>
+                <div id="home">Home</div>
+                <div id="home-1000"><span class="fa-regular fa-house"></span></div>
                 <ul>
                     <li><a href="#welcome">Welcome</a></li>
-                    <li><a href="#bits-and-pieces">Bits and pieces:A glimpse into what we do</a></li>
+                    <li><a href="#bits-and-pieces">Bits and pieces</a></li>
                     <li><a href="#team">The team</a></li>
-                    <li><a href="#news">News about TODO's team</a></li>
+                    <li><a href="#news">News about us</a></li>
                     <li><a href="#office-schedule">Our office is open!</a></li>
                     <li><a href="#announcements">Announcements</a></li>
                     <li><a href="#fqa">FQA</a></li>
@@ -58,11 +66,11 @@
             <li>
                 <div>Events</div>
                 <ul>
-                    <li><a href="despre.html#prezentare">Wedding</a></li>
-                    <li><a href="despre.html#istoric">Birthday</a></li>
-                    <li><a href="despre.html#motivatie">Gender reveal</a></li>
-                    <li><a href="despre.html#galerie">Corporate</a></li>
-                    <li><a href="despre.html#galerie">Other</a></li>
+                    <li><a href="#">Wedding</a></li>
+                    <li><a href="#">Birthday</a></li>
+                    <li><a href="#">Gender reveal</a></li>
+                    <li><a href="#">Corporate</a></li>
+                    <li><a href="#">Other</a></li>
                 </ul>
             </li>
 
@@ -99,9 +107,9 @@
     </nav>
 
     <main>
-
-        <section id="welcome">
-            <h2>Welcome!</h2>
+        <div id="page-grid">
+            <section id="welcome">
+                <h2>Welcome!</h2>
             <p>Glad to see you here. This means you already have a special event and we will be happy to help!</p>
             <p>Is it a: </p>
             <div>
@@ -132,8 +140,10 @@
         </section>
 
         <section id="bits-and-pieces">
-            <h2>Bits and pieces: A glimpse into what we do</h2>
-            <p> Have you ever dream about enjoying your special day <s> but you also think about all the effort </s> ?
+            <h2>Bits and pieces</h2>
+            <p>A glimpse into what we do!</p>
+            <p> Have you ever dream about enjoying your special day <s> but you also think about all the effort </s>
+                ?
                 We can make it happen. See it for yourself! </p>
             <section>
                 <h3>Weddings</h3>
@@ -195,17 +205,15 @@
                     <li>Festivals</li>
                     <li>TED talks</li>
                 </ul>
-                <div class="taburi-iframe">
-                    <a href="https://www.youtube.com/embed/TEjYZpl0Z5E" target="ifr-video"
-                        style="text-decoration:none">Gender reveal</a>
-                    <a href="https://www.youtube.com/embed/fq2CdnfijhQ" target="ifr-video"
-                        style="text-decoration:none">Wedding</a>
-                    <a href="https://www.youtube.com/embed/DjkuekgddLw" target="ifr-video"
-                        style="text-decoration:none">Corporate event</a>
-                </div>
-                <div>
+                <div class="iframe-container">
+                    <div class="iframe-tabs">
+                        <a href="https://www.youtube.com/embed/TEjYZpl0Z5E" target="ifr-video"><button>Gender reveal</button></a>
+                        <a href="https://www.youtube.com/embed/fq2CdnfijhQ" target="ifr-video"><button>Wedding</button></a>
+                        <a href="https://www.youtube.com/embed/DjkuekgddLw" target="ifr-video"><button>Corporate event</button></a>
+                    </div>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/OUB6zKc-Tos"
-                        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
             </section>
@@ -238,7 +246,7 @@
         </section>
 
         <section id="news">
-            <h2>News about TODO's team</h2>
+            <h2>News about us</h2>
 
             <article>
                 <h3>Dream wedding</h3>
@@ -257,25 +265,30 @@
                 <h3>"Our team is stronger than ever!"</h3>
                 <p>This is what we heard on a sunnny Monday morning. Rick, the manager of Emag, just got back with
                     feedback about the teambuilding we organized for his team this weekend.</p>
-                <p> Not only we were very pleased to hear it, but Emag has been working with TODO events for a very long
+                <p> Not only we were very pleased to hear it, but Emag has been working with TODO events for a very
+                    long
                     time, so keeping our customer <em>happy</em> and <em>loyal</em> is one of our top priorities</p>
-                <p> The team, consisting of 20 people, had a nice 4 days trip to Poiana Brasov, a mountain location in
+                <p> The team, consisting of 20 people, had a nice 4 days trip to Poiana Brasov, a mountain location
+                    in
                     Romania. They stayed at Mariotte and had all meals included, and an extra special dinner</p>
-                <p> We organized different activities, including personalized trainings but also fun ones such as: </p>
+                <p> We organized different activities, including personalized trainings but also fun ones such as:
+                </p>
                 <ol>
                     <li>Ski and snowboard</li>
                     <li>Swimming and jacuzzi</li>
                     <li>Pasta cooking class</li>
                     <li>Board games night</li>
                 </ol>
-                <p>Overall, everybody was very pleased, or as we say in Romania: <i lang="ro">Chef pe cinste</i>. See
+                <p>Overall, everybody was very pleased, or as we say in Romania: <i lang="ro">Chef pe cinste</i>.
+                    See
                     you soon Rick!</p>
             </article>
 
             <article>
                 <h3>Article 3</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo,
-                    arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc
+                    arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris.
+                    Nunc
                     vulputate risus ex.</p>
                 <ol>
                     <li>Suspendisse tempus imperdiet elit in.</li>
@@ -288,47 +301,64 @@
 
         <section id="office-schedule">
             <h2>Office schedule</h2>
-            <table id="tab-orar">
+            <table id="schedule">
+                <caption>See you there!</caption>
                 <thead>
                     <tr>
                         <th>Day</th>
-                        <th>Timings</th>
+                        <th>Morning</th>
+                        <th>Afternoon</th>
+                        <th>Who will you find there?</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Monday</td>
                         <td>10-12</td>
+                        <td>15-16:30</td>
+                        <td>Whole team</td>
                     </tr>
                     <tr>
                         <td>Tuesday</td>
                         <td>9-12</td>
-
+                        <td>15-16:30</td>
+                        <td>Geta</td>
                     </tr>
                     <tr>
                         <td>Wednesday</td>
                         <td>9-11</td>
+                        <td>15-17</td>
+                        <td>Denisa, Andrei</td>
                     </tr>
                     <tr>
                         <td>Thursday</td>
                         <td>9-11</td>
+                        <td>15-17</td>
+                        <td>Denisa, Andrei</td>
                     </tr>
                     <tr>
                         <td>Friday</td>
                         <td>9-12</td>
+                        <td>14-18</td>
+                        <td>Whole team</td>
                     </tr>
                     <tr>
                         <td>Saturday</td>
                         <td>10-12</td>
+                        <td>14-18</td>
+                        <td>Denisa, Andrei</td>
+
                     </tr>
                     <tr>
                         <td>Sunday</td>
                         <td>10-14</td>
+                        <td>Closed</td>
+                        <td>Geta</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="2">24/7 on Skype, please see contact</td>
+                        <td colspan="4">We are available 24/7 on Skype, please see contact.</td>
                     </tr>
                 </tfoot>
             </table>
@@ -336,14 +366,16 @@
 
         <section id="announcements">
             <h2>Announcements</h2>
-
-            <p><time datetime="2023-01-03">3 January 2023: </time><strong>Awarded best event organizer in Bucharest for
-                    2022!</strong></p>
-            <p><time datetime="2022-12-24">24 December 2022: </time>Happy holidays! Our team will be back after January
+            <p><time datetime="2023-01-03">3 January 2023: </time><strong>Awarded best event organizer in Bucharest
+                    for 2022! <span class="fas fa-star fa-spin"></span>
+                </strong></p>
+            <p><time datetime="2022-12-24">24 December 2022: </time>Happy holidays! Our team will be back after
+                January
                 1st.</p>
             <p><time datetime="2023-04-05">5 April 2023: </time>We are fully booked for July. Please contact us for
                 events after August 1st.</p>
-            <p><time datetime="2023-04-30">30 April 2023: </time>Our office will be closed on May 1st. Please contact us
+            <p><time datetime="2023-04-30">30 April 2023: </time>Our office will be closed on May 1st. Please
+                contact us
                 on Skype for any inquire.</p>
             <p><time datetime="2023-05-02">2 May 2023: </time>We are fully booked for August. Please contact us for
                 events after September 1st.</p>
@@ -353,19 +385,22 @@
             <h2>FAQ</h2>
             <details>
                 <summary>What kind of events you organize?</summary>
-                <p>Until now, we have been in charge of weddings, birthdays, gender reveal parties, corporate events. We
+                <p>Until now, we have been in charge of weddings, birthdays, gender reveal parties, corporate
+                    events. We
                     are flexibile and open to new challenges so if you think we are a right fit, please feel free to
                     book a meeting with us.</p>
             </details>
             <details>
                 <summary>I'm from another city! Can I still work with your team for an event outside Bucharest?
                 </summary>
-                <p>We prefer working on site but we also offer the remote opportunity. However, we recommend at least
+                <p>We prefer working on site but we also offer the remote opportunity. However, we recommend at
+                    least
                     one meeting to be face-to-face.</p>
             </details>
             <details>
                 <summary>Do you organize only big events?</summary>
-                <p>Of course not! We have been organizing bigger events because usually this is when people need more
+                <p>Of course not! We have been organizing bigger events because usually this is when people need
+                    more
                     help but we are happy to help with smaller parties. Our smallest event was for 5 people and the
                     biggest was 10,000. </p>
             </details>
@@ -375,65 +410,88 @@
             </details>
             <details>
                 <summary>I want to do a vegan wedding. Are you able to help me with that?</summary>
-                <p>Of course we are! From alergies to personal choices, when it comes to food, we can follow any wishes.
+                <p>Of course we are! From alergies to personal choices, when it comes to food, we can follow any
+                    wishes.
                     As an example, you can download a few special menus we had so far
                     <a href="./resurse/menu/vegan-menu.pdf" download="Vegan menu for Wedding">here.</a>
                 </p>
             </details>
             <details>
                 <summary>How much do we charge?</summary>
-                <p>While we cannot offer a specific number because it depends on various elements, we use the following
+                <p>While we cannot offer a specific number because it depends on various elements, we use the
+                    following
                     formula:</p>
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <mrow>
-                        <mi>No. of guest</mi>
-                        <mo>*</mo>
-                        <mi>Cost per guest</mi>
-                    </mrow>
-                    <mo>=</mo>
-                    <mn>Total guest cost</mn>
-                </math> <br>
-                <math>
-                    <mrow>
-                        <mi>7.5%</mi>
-                        <mo>*</mo>
-                        <mi>Total cost</mi>
-                    </mrow>
-                    <mo>=</mo>
-                    <mn>Organizer cost</mn>
-                </math> <br>
-                <math>
-                    <mrow>
-                        <mi>Final cost</mi>
-                        <mo>=</mo>
-                        <mi>Total guest cost</mi>
-                        <mo>+</mo>
-                        <mi>Organizer cost</mi>
-                    </mrow>
-                </math>
+                    <div class="formula">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>No. of guest</mi>
+                                <mo> * </mo>
+                                <mi>Cost per guest</mi>
+                                <mo>=</mo>
+                                <mn>Total guest cost</mn>
+                            </mrow>
+    
+                        </math> <br>
+                        <math>
+                            <mrow>
+                                <mi>7.5%</mi>
+                                <mo> * </mo>
+                                <mi>Total guest cost</mi>
+                                <mo>=</mo>
+                            <mn>Organizer cost</mn>
+                            </mrow>
+                        </math> <br>
+                        <math>
+                            <mrow>
+                                <mi>Total guest cost</mi>
+                                <mo>+</mo>
+                                <mi>Organizer cost</mi>
+                                <mo>=</mo>
+                            <mn>Final cost</mn>
+                            </mrow>
+                        </math>
+                    </div>
                 <br>
                 <small>*Cost per guest is calculcated based on F&B, location and any extra amenities.</small>
             </details>
         </section>
+
+        <section id="calendar">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+        </section>
+            <section id="users">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+            </section>
+            <section id="announcements-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+            </section>
+                <section id="users-stats">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+                </section>
+                    <section id="server">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+                    </section>
+    </div>
     </main>
 
     <footer>
-        <section>
+        <section id="#contact">
             <h2>Contact</h2>
             <div>
                 <address>
-                    <a href="tel:+407256222450" class="fa-thin fa-phone">Call us</a>
-                    <a href="mailto:lorena.potlog@yahoo.com" class="fa-thin fa-envelope">Email us</a>
-                    <a href="skype:lorenapotlog?chat" class="fa-thin fa-comments"> 24/7 assistance (via Skype)</a>
-                    <p class="fa-thin fa-location-dot">Meet us @ Academy street no. 14, 010014, Bucharest</p>
+                    <a href="tel:+407256222450"><span class="fa-regular fa-phone"> Call us</a>
+                    <a href="mailto:lorena.potlog@yahoo.com"><span class="fa-regular fa-envelope"> Email us</a>
+                    <a href="skype:lorenapotlog?chat"><span class="fa-regular fa-comments"> 24/7 assistance (via
+                            Skype)</a>
+                    <p> Meet us @ Academy street no. 14, 010014, Bucharest</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8843011393105!2d26.097011775875163!3d44.43553547107589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1682778737477!5m2!1sen!2sro"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </address>
 
-                <a href="#" title="scroll up">
-                    <div>Go up</div>
+                <a id="link-top" href="#" >
+                    <div id="diamond"><span class="tooltiptext">Scroll up</span></div>
                 </a>
 
                 <small>Copyright 2023 &copy; TODO events, <time datetime="2023-05-05">5 May 2023</time></small>
