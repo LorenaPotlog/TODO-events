@@ -5,19 +5,71 @@ html {
     --text-color: #967869;
     --links-color: #9F9685;
     --border-color: #f1d5d5;
+
+    --page-padding: 20px;
+}
+
+@media screen and (min-width:1001px) and (max-width: 1500px) {
+    html{
+        font-size: 18px;
+        padding-left: var(--page-padding);
+        padding-right: var(--page-padding);
+        overflow: auto;
+     } 
 }
 
 html {
     background-color: var(bg-color);
     color: var(--text-color);
     transition: font-size 0.3s ease;
-    padding-left: 20px;
     font-family: 'Raleway', sans-serif;
 }
 
-header h1{
-    font-size: 100px;
+/* img {
+    max-width: fit-content;
+    max-height: fit-content;
 }
+
+iframe {
+    max-width: fit-content;
+    max-height: fit-content;
+} */
+
+header {
+    background-color: oldlace;
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+    box-shadow: 1px 1px 0px 0px var(--highlight); 
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
+    padding-top: var(--page-padding);
+    padding-bottom: var(--page-padding);
+}
+
+header h1{
+    padding-top: 1rem;
+    font-size: 6vw;
+font-weight: bolder;}
+
+     h2{
+        padding-top: 1rem;
+        font-size: 2vw;
+font-weight: bold;
+padding-bottom: 1rem;
+}
+
+h3{
+    padding-top: 1rem;
+    font-size: 1.5vw;
+text-align: center;
+font-weight: bold;
+padding-bottom: 1rem;}
+
+
+p{
+    font-size: 1.5vw;
+}
+
 
 #page-grid {
     display: grid;
@@ -26,18 +78,28 @@ header h1{
         "zone-2 zone-2 zone-3"
         "zone-2 zone-2 zone-4"
         "zone-5 zone-6 zone-7"
-        "zone-8 zone-8 zone-8";
+        "zone-8 zone-8 zone-8"
+        "zone-8 zone-8 zone-8"
+;        grid-gap: 1em;
+
 }
 
-/* #grid-pagina > section{
-    padding: 10px;
-} */ 
+#page-grid > section  {
+    background-color: floralwhite;
+    border: 2px solid linen;
+    border-radius: 10px;
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
+    padding-top: var(--page-padding);
+    padding-bottom: var(--page-padding);
+
+}
 
 #welcome{
     grid-area: zone-1;
 }
 
-#office-schedule{
+#good-to-know{
     grid-area: zone-2;
 }
 
@@ -47,7 +109,7 @@ header h1{
 #users{
     grid-area: zone-4;
 }
-#announcements-2{
+#announcements{
     grid-area: zone-5;
 }
 #users-stats{
@@ -57,12 +119,10 @@ header h1{
     grid-area: zone-7;
 }
 
-#fqa{
-    display: none;
+#creativity{
+    grid-area: zone-8;
 }
-#announcements{
-    display: none;
-}
+
 #news{
     display: none;
 }
@@ -88,73 +148,112 @@ header h1{
     font-style: italic;
 }
 
+
 footer{
+    background-color: oldlace;
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+    box-shadow: 1px 1px 0px 0px var(--highlight); 
+padding: 1%;    
+
     text-align: justify;
     font-size: small;
-    float: left;
+    display: flex;
+  flex-direction: column;
 }
 
-footer a,p{
-    display: inline-flexbox;
-    padding-right: 20px;
+footer a{
+    display: block;
+    margin-bottom: 10px;
 }
-
-footer small{
-    float: right;
-    align-self:flex-start;
+footer h2{
+    text-align: left;
 }
 
 footer iframe{
-position: relative;
-width: 300px;
-height: 200px;
-border: 2px solid var(--highlight);
-float: left;
+    padding-right: 20%;
+position: relative;}
+
+
+
+
+#copyright {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#banner {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
+/* Iframe*/
 
-
-.iframe-tabs {
-position:absolute;
-z-index: 2;
-background-color:transparent;
-padding: 5px 10px;
-border-radius: 5px;
-justify-content: flex-end;
-align-items: center;
-display: flex;
-bottom:0;
-right:0;
-
-}
-
-
-.iframe-tabs a {
-    background-color: #ccc;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 16px;
-
-  }
-
-iframe {
-    padding-bottom: 30px;
-    position: absolute;
-}
 
 .iframe-container {
-    position: relative;
-    background-color:transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 560px;
-    height: 100px;
 
 }
+
+.iframe-tabs{
+    order: 2;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.iframe-tabs a{
+    border: 2px solid var(--button-color);
+    background-color: var(--button-color);
+    transition:  background-color 1s;
+
+
+}
+
+.iframe-container a:link {
+    color: pink;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0 0 20px 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.iframe-tabs a:hover{
+    background-color: white;
+    /* transition-duration: 0.5s;
+    transition: ease-out 0.5s;
+    background: linear-gradient(to right, --button-color,white); */
+
+}
+
+.flex-iframe{
+    order: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 60%;
+}
+
+.flex-iframe iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 90%;
+    height: 85%;
+    padding: 5%;
+    background-color: var(--button-color);
+}
+
+
+/*Scroll*/
 
 
 #link-top {
@@ -194,7 +293,8 @@ text-align: center;
         border-bottom: 1.5rem solid beige;
 
     }
-    .tooltiptext{
+    
+    .tooltiptext {
         visibility: visible;
     }
 
@@ -214,8 +314,45 @@ text-align: center;
 }
 
 
-@media screen and (min-width:1001px) and (max-width: 1500px) {
-    html{
-        font-size: 18px;
-     }
-}
+body {
+    padding: 1%;
+  
+  }
+  
+  #slideshow {
+    padding-top: 10px;
+    text-align: center;
+    overflow: hidden;
+    height: 510px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .slide-wrapper {
+    width: 2912px;
+   animation: slide 10s ease infinite;
+  }
+  
+  .slide {
+    float: left;
+    height: 510px;
+    width: 728px;
+  }
+  
+  .slide-image {
+    text-align: center;
+    font-size: 10em;
+    height: 100%;
+    width: 100%;
+  }
+  
+ @keyframes slide {
+    20% {margin-left: 0px;}
+    30% {margin-left: -728px;}
+    50% {margin-left: -728px;}
+    60% {margin-left: -1456px;}
+    70% {margin-left: -1456px;}
+    80% {margin-left: -2184px;}
+    90% {margin-left: -2184px;}
+  }
+  

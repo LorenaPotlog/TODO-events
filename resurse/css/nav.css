@@ -1,3 +1,5 @@
+/* not done, to be checked */
+
 html{
     --bg-color: #E6F3EC;
     --button-color: #E9D9C9;
@@ -7,31 +9,18 @@ html{
     --border-color: #f1d5d5;
     --button-size:200px;
     --menu-height:50px;
-    --menu-color: var(--bg-color);
+    --menu-color: rgb(240, 239, 224);
+
 }
 
 nav {
     z-index: 1;
-    background-color: var(--bg-color);
     background: transparent;
-    width: calc(100vw - 15px);
-    height: auto;
-    position: sticky;
-    top: 0;
-    margin-left: 20px;
 }
 
 ul.menu {
     display: flex;
-    justify-content: start;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-ul.menu ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    flex-wrap: wrap; 
 }
 
 ul.menu > li {
@@ -47,21 +36,19 @@ ul.menu li {
     background-color: var(--menu-color);
     overflow: hidden;
     text-align: center;
-    border-top: 1px solid var(--highlight);
-    border-right: 1px solid var(--highlight);
-    border-left: 1px solid var(---highlight);
-    border-bottom: 1px solid var(--highlight);
-    box-sizing: border-box;
+    border: 1px solid var(--highlight);
 }
 
 ul.menu li div, ul.menu li a {
-    display: block;
-    width: 100%;
-    height: 100%;
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
     line-height: var(--menu-height);
+}
+
+ul.menu li div:hover, ul.menu li a:hover {
+    color: black;
+    transition: ease-in-out 0.5s;
 }
 
 ul.menu li:hover{
@@ -69,7 +56,7 @@ ul.menu li:hover{
 }
 
 ul.menu ul li a:hover{
-    color: white;
+    color: black;
     overflow: visible;
 }
 
@@ -87,18 +74,8 @@ ul.menu li:hover ul {
     transform: scale(1, 1);
 }
 
-
-ul.menu>li:before{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(to right, var(--text-color), white);
-    transition: width 1s ease;
+#home i, #hamburger, #ch-menu{
+    display: none;
 }
 
-ul.menu>li:hover::before{
-    width: calc(var(--button-size) - 2px);
-}
+

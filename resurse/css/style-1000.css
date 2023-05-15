@@ -3,7 +3,10 @@
 
 @media screen and (min-width:701px) and (max-width: 1001px){
     html{
+        --page-padding: 15px;
         font-size: 16px;
+        padding-left: var(--page-padding);
+        padding-right: var(--page-padding);
      }
 
      #page-grid {
@@ -14,6 +17,7 @@
             "zone-4 zone-5"
             "zone-6 zone-7"
             "zone-8 zone-8 ";
+
     }
 
     #office-schedule {
