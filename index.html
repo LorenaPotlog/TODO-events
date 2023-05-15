@@ -27,11 +27,19 @@
     <link rel="stylesheet" type="text/css" href="./resurse/css/style-1500.css">
     <link rel="stylesheet" type="text/css" href="./resurse/css/style-1000.css">
     <link rel="stylesheet" type="text/css" href="./resurse/css/style-700.css">
-    <link rel="stylesheet" type="text/css" href="./resurse/css/nav.css">
+
+    <link rel="stylesheet" href="./resurse/css/nav.css">
+    <link rel="stylesheet" href="./resurse/css/nav-1000.css">
+    <link rel="stylesheet" href="./resurse/css/nav-700.css">
+    <link rel="stylesheet" href="./resurse/scss/nav.scss">
+
+
+
     <link rel="stylesheet" type="text/css" href="./resurse/css/table.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/css/print.css">
+    <link rel="stylesheet" type="text/css" href="./resurse/slideshow.js">
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-
 
 </head>
 
@@ -39,28 +47,33 @@
 
     <header>
         <h1>TODO <span>events</span></h1>
-        <picture>
+        <!-- <picture>
             <source srcset="./resurse/logo/peony-80.jpg" media="(max-width:700px)" />
             <source srcset="./resurse/logo/peony-100.jpg" media="(max-width:1200px)" />
-            <img src="./resurse/logo/peony-150.jpg" alt="logo" />
-        </picture>
+            <img src="./resurse/logo/peony-150.jpg" alt="logo"fa-regular fa-solid fa-house />
+        </picture> -->
     </header>
 
     <nav>
+        <label id="hamburger" for="ch-menu">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <input id="ch-menu" type="checkbox">
+
         <ul class="menu">
             <li>
-                <div id="home">Home</div>
-                <div id="home-1000"><span class="fa-regular fa-house"></span></div>
+                <div id="home">
+                    <i class="fa-solid fa-regular fa-house"></i>
+                    <a href="#home" class="home-1000">Home</a></div>
+
                 <ul>
                     <li><a href="#welcome">Welcome</a></li>
                     <li><a href="#bits-and-pieces">Bits and pieces</a></li>
                     <li><a href="#team">The team</a></li>
-                    <li><a href="#news">News about us</a></li>
-                    <li><a href="#office-schedule">Our office is open!</a></li>
-                    <li><a href="#announcements">Announcements</a></li>
-                    <li><a href="#fqa">FQA</a></li>
+                    <!-- <li><a href="#news">News about us</a></li> -->
+                    <li><a href="#good-to-know">Good-to-know!</a></li>
                     <li><a href="#contact">Contact</a></li>
-                </ul>
+                </ul> 
             </li>
 
             <li>
@@ -102,41 +115,22 @@
                 </ul>
             </li>
 
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
         <div id="page-grid">
             <section id="welcome">
-                <h2>Welcome!</h2>
-            <p>Glad to see you here. This means you already have a special event and we will be happy to help!</p>
-            <p>Is it a: </p>
-            <div>
-                <div><b>Wedding?</b></div>
-                <div><b>Birthday?</b></div>
-                <div><b>Gender reveal?</b></div>
-                <div><b>Corporate event?</b></div>
-                <div><b>Baptism</b></div>
-                <div><b>Concert?</b></div>
-            </div>
-            <p>Or anything else special that you would like to celebrate?</p>
-            <hr>
-            <div>
-                <video width="320" height="240" playsinline autoplay loop muted>
-                    <source src="./resurse/video/celebration.mp4" type="video/mp4">
-                </video>
-                <video width="320" height="240" playsinline autoplay loop muted>
-                    <source src="./resurse/video/celebration.mp4" type="video/mp4">
-                </video>
-                <video width="320" height="240" playsinline autoplay loop muted>
-                    <source src="./resurse/video/celebration.mp4" type="video/mp4">
-                </video>
-                <video width="320" height="240" playsinline autoplay loop muted>
-                    <source src="./resurse/video/celebration.mp4" type="video/mp4">
-                </video>
-            </div>
-            <hr>
+                <h2>Welcome!</h2>            
+                <p>
+                Who We Are
+                Blossom Weddings is an award-winning destination wedding planning service that prides itself in designing and coordinating bespoke destination weddings across  Greece including the luxurious Athens Riviera and the stunning Greek Islands of Kea, Crete,  Ios ,Mykonos, Santorini, Paros and  Naxos Island. If you’re looking to start planning your next celebration, you’ve come to the right place.
+                
+                Services offered: Bespoke Wedding Planning / Wedding Packages / Full Wedding Planning / Partial Wedding Planning / Rehearsal Dinner / Legal Requirement Assistance / Post Wedding Day Celebrations / Renewal of Vows / Marriage Proposals / Elopements / Symbolic Weddings/ Beach weddings / Church Weddings / Hindu Weddings / Jewish Weddings </p>
+
+                <!-- /to modify text/ -->
+                
         </section>
 
         <section id="bits-and-pieces">
@@ -205,17 +199,6 @@
                     <li>Festivals</li>
                     <li>TED talks</li>
                 </ul>
-                <div class="iframe-container">
-                    <div class="iframe-tabs">
-                        <a href="https://www.youtube.com/embed/TEjYZpl0Z5E" target="ifr-video"><button>Gender reveal</button></a>
-                        <a href="https://www.youtube.com/embed/fq2CdnfijhQ" target="ifr-video"><button>Wedding</button></a>
-                        <a href="https://www.youtube.com/embed/DjkuekgddLw" target="ifr-video"><button>Corporate event</button></a>
-                    </div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OUB6zKc-Tos"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
             </section>
         </section>
 
@@ -299,8 +282,9 @@
             </article>
         </section>
 
-        <section id="office-schedule">
-            <h2>Office schedule</h2>
+        <section id="good-to-know">
+            <h2>Good to know</h2>
+            <h3>Office schedule</h3>
             <table id="schedule">
                 <caption>See you there!</caption>
                 <thead>
@@ -362,27 +346,7 @@
                     </tr>
                 </tfoot>
             </table>
-        </section>
-
-        <section id="announcements">
-            <h2>Announcements</h2>
-            <p><time datetime="2023-01-03">3 January 2023: </time><strong>Awarded best event organizer in Bucharest
-                    for 2022! <span class="fas fa-star fa-spin"></span>
-                </strong></p>
-            <p><time datetime="2022-12-24">24 December 2022: </time>Happy holidays! Our team will be back after
-                January
-                1st.</p>
-            <p><time datetime="2023-04-05">5 April 2023: </time>We are fully booked for July. Please contact us for
-                events after August 1st.</p>
-            <p><time datetime="2023-04-30">30 April 2023: </time>Our office will be closed on May 1st. Please
-                contact us
-                on Skype for any inquire.</p>
-            <p><time datetime="2023-05-02">2 May 2023: </time>We are fully booked for August. Please contact us for
-                events after September 1st.</p>
-        </section>
-
-        <section id="fqa">
-            <h2>FAQ</h2>
+            <h3>FQA</h3>
             <details>
                 <summary>What kind of events you organize?</summary>
                 <p>Until now, we have been in charge of weddings, birthdays, gender reveal parties, corporate
@@ -454,23 +418,64 @@
                 <br>
                 <small>*Cost per guest is calculcated based on F&B, location and any extra amenities.</small>
             </details>
+        
         </section>
 
+
         <section id="calendar">
+            <h2>Calendar</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
         </section>
             <section id="users">
+                <h2>Users</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
             </section>
-            <section id="announcements-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+            <section id="announcements">
+                <h2>Announcements</h2>
+                <p><time datetime="2023-01-03">3 January 2023: </time><strong>Awarded best event organizer in Bucharest
+                    for 2022! <span class="fas fa-star fa-spin"></span>
+                </strong></p>
+            <p><time datetime="2022-12-24">24 December 2022: </time>Happy holidays! Our team will be back after
+                January
+                1st.</p>
+            <p><time datetime="2023-04-05">5 April 2023: </time>We are fully booked for July. Please contact us for
+                events after August 1st.</p>
+            <p><time datetime="2023-04-30">30 April 2023: </time>Our office will be closed on May 1st. Please
+                contact us
+                on Skype for any inquire.</p>
+            <p><time datetime="2023-05-02">2 May 2023: </time>We are fully booked for August. Please contact us for
+                events after September 1st.</p>
             </section>
                 <section id="users-stats">
+                    <h2>Users stats</h2>
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
                 </section>
                     <section id="server">
+                        <h2>Server</h2>
+
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+                    
                     </section>
+
+                    <section id="creativity">
+                        <h2>Our work</h2>
+                        <p><i class="fa-sharp fa-solid fa-star"></i> We are proud with what we deliver! <i class="fa-sharp fa-solid fa-star"></i></p>
+                    <div class="iframe-container">
+                        <div class="iframe-tabs">
+                            <a href="https://www.youtube.com/embed/TEjYZpl0Z5E" target="ifr-video">Gender reveal</a>
+                            <a href="https://www.youtube.com/embed/fq2CdnfijhQ" target="ifr-video">Wedding</a>
+                            <a href="https://www.youtube.com/embed/DjkuekgddLw" target="ifr-video">Corporate event</a>
+                        </div>
+                        <div class="flex-iframe">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OUB6zKc-Tos"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay;
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
     </div>
     </main>
 
@@ -479,25 +484,30 @@
             <h2>Contact</h2>
             <div>
                 <address>
-                    <a href="tel:+407256222450"><span class="fa-regular fa-phone"> Call us</a>
-                    <a href="mailto:lorena.potlog@yahoo.com"><span class="fa-regular fa-envelope"> Email us</a>
-                    <a href="skype:lorenapotlog?chat"><span class="fa-regular fa-comments"> 24/7 assistance (via
+                    <a href="tel:+407256222450"><span class="fa-regular fa-solid fa-phone"> Call us</a>
+                    <a href="mailto:lorena.potlog@yahoo.com"><span class="fa-regular fa-solid fa-envelope"> Email us</a>
+                    <a href="skype:lorenapotlog?chat"><span class="fa-regular fa-solid fa-comments"> 24/7 assistance (via
                             Skype)</a>
-                    <p> Meet us @ Academy street no. 14, 010014, Bucharest</p>
-                    <iframe
+                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8843011393105!2d26.097011775875163!3d44.43553547107589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1682778737477!5m2!1sen!2sro" target="_blank" span class="fa-regular fa-solid fa-location-dot">
+                        Meet us @ Academy street no. 14, 010014, Bucharest</a>
+                        <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8843011393105!2d26.097011775875163!3d44.43553547107589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1682778737477!5m2!1sen!2sro"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="50%" height="50%" style="border:0;" allowfullscreen="" loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </address>
 
                 <a id="link-top" href="#" >
                     <div id="diamond"><span class="tooltiptext">Scroll up</span></div>
                 </a>
-
-                <small>Copyright 2023 &copy; TODO events, <time datetime="2023-05-05">5 May 2023</time></small>
-                <br>
+                <div id="copyright">
+                <small >Copyright 2023 &copy; TODO events, <time datetime="2023-05-05">5 May 2023</time></small>
+            </div>
+            <div id="banner">
                 <small><b>This is a school project.</b></small>
             </div>
+            </div>
+
+            <div id="watermark"></div>
         </section>
     </footer>
 </body>

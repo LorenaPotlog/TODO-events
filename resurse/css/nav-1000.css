@@ -1,0 +1,17 @@
+@media screen and (max-width: 1000px) {
+
+#home i{
+    display: inline;
+}
+#home .home-1000{
+    display: none;
+}
+
+#home:hover{
+    .home-1000{
+        display: inline;
+    }
+}
+}
+
+    

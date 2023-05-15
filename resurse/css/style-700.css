@@ -1,37 +1,25 @@
 @media screen and (max-width: 700px) {
     html{
+        --page-padding: 10px;
         animation: none;
         transition: none;
         font-size: 14px;
+        padding-left: var(--page-padding);
+        padding-right: var(--page-padding);
      }
 
-     #office-schedule {
-        overflow-x:scroll;
+     #schedule {
+        overflow-x:auto;
         overflow-y: hidden;
+        white-space: nowrap;
+        display:block;
     }
 
     #page-grid {
-        display: grid;
-        grid-column: 1;
-        grid-template-columns: 1fr;
-        grid-template-areas: "zone-1"
-            "zone-2"
-            "zone-3"
-            "zone 4"
-            "zone-5"
-            "zone-6"
-            "zone-7"
-            "zone-8";
-    }
+        display: block;
+            }
 
-   ul.menu #home{
-    display: none;
-   }
-
-   ul.menu #home-1000{
-    display: block;
-   }
-
-
-
+            footer iframe{
+                width: 80%;
+            }
 }
