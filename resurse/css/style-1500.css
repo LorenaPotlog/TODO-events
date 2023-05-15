@@ -7,66 +7,47 @@ html {
     --border-color: #f1d5d5;
 
     --page-padding: 20px;
-}
 
-@media screen and (min-width:1001px) and (max-width: 1500px) {
-    html{
-        font-size: 18px;
-        padding-left: var(--page-padding);
-        padding-right: var(--page-padding);
-        overflow: auto;
-     } 
-}
-
-html {
     background-color: var(bg-color);
     color: var(--text-color);
     transition: font-size 0.3s ease;
     font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+        padding-left: var(--page-padding);
+        padding-right: var(--page-padding);
+        overflow: auto;
 }
 
-/* img {
-    max-width: fit-content;
-    max-height: fit-content;
-}
-
-iframe {
-    max-width: fit-content;
-    max-height: fit-content;
-} */
 
 header {
     background-color: oldlace;
     border: 2px solid var(--button-color);
     border-radius: 10px;
     box-shadow: 1px 1px 0px 0px var(--highlight); 
-    padding-left: var(--page-padding);
-    padding-right: var(--page-padding);
-    padding-top: var(--page-padding);
-    padding-bottom: var(--page-padding);
+    padding: var(--page-padding);
 }
 
-header h1{
-    padding-top: 1rem;
-    font-size: 6vw;
+ h1{
+    padding-top: var(--page-padding);
+    font-size: 4vw;
 font-weight: bolder;}
 
-     h2{
-        padding-top: 1rem;
-        font-size: 2vw;
+h2{
+font-size: 2vw;
 font-weight: bold;
-padding-bottom: 1rem;
+padding-top: var(--page-padding);
+padding-bottom: var(--page-padding);
 }
 
 h3{
-    padding-top: 1rem;
-    font-size: 1.5vw;
+font-size: 1.5vw;
 text-align: center;
 font-weight: bold;
-padding-bottom: 1rem;}
+padding-top: var(--page-padding);
+padding-bottom: var(--page-padding);}
 
 
-p{
+p,section,table,details{
     font-size: 1.5vw;
 }
 
@@ -313,8 +294,3 @@ text-align: center;
     vertical-align: baseline;
 }
 
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> a7699a15d08a0018df1e86d757a3e876cdc61586
