@@ -1,14 +1,14 @@
 /* not done, to be checked */
 
-html{
+html {
     --bg-color: #E6F3EC;
     --button-color: #E9D9C9;
     --highlight: #9D674D;
     --text-color: #967869;
     --links-color: #9F9685;
     --border-color: #f1d5d5;
-    --button-size:200px;
-    --menu-height:50px;
+    --button-size: 200px;
+    --menu-height: 50px;
     --menu-color: rgb(240, 239, 224);
 
 }
@@ -20,10 +20,10 @@ nav {
 
 ul.menu {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
-ul.menu > li {
+ul.menu>li {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: var(--button-size);
@@ -39,23 +39,25 @@ ul.menu li {
     border: 1px solid var(--highlight);
 }
 
-ul.menu li div, ul.menu li a {
+ul.menu li div,
+ul.menu li a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
     line-height: var(--menu-height);
 }
 
-ul.menu li div:hover, ul.menu li a:hover {
+ul.menu li div:hover,
+ul.menu li a:hover {
     color: black;
     transition: ease-in-out 0.5s;
 }
 
-ul.menu li:hover{
+ul.menu li:hover {
     overflow: visible;
 }
 
-ul.menu ul li a:hover{
+ul.menu ul li a:hover {
     color: black;
     overflow: visible;
 }
@@ -74,8 +76,8 @@ ul.menu li:hover ul {
     transform: scale(1, 1);
 }
 
-#home i, #hamburger, #ch-menu{
+#home i,
+#hamburger,
+#ch-menu {
     display: none;
 }
-
-

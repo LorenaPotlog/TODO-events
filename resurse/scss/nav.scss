@@ -1,110 +1,88 @@
+/* not done, to be checked */
 
-/*de verificat!!*/
-#hamburger, #ch-menu{
-  display:none;
-}
-body{
-  --menu-height: 60px;
-  --button-width: 230px;
-}
-
-nav{
-  background-color: var(--primary-color);
-  height: var(--menu-height);
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-ul.menu{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  >li{
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: var(--button-width);
-      transition: font-size 250ms linear;
-      >div>a{
-          transition: font-size 250ms linear;
-          &:hover{
-              font-size: 18px;
-          }
-      }
-
-      >a:hover{
-          font-size: 18px;
-      }
-  }
-
-  li{
-      width: var(--button-width);
-      height: var(--menu-height);
-      background-color: var(--primary-color);
-      overflow: hidden;
-      text-align: center;
-      box-sizing: border-box;
-
-
-      div, a{
-          display: block;
-          width: 100%;
-          height: 100%;
-          color: var(--secondary-color);
-          text-decoration: none;
-          font-weight: bold;
-          line-height: var(--menu-height);
-      }
-
-      &:hover{
-          overflow: visible;
-      }
-  }
-
-  ul{
-      position: relative;
-      z-index: 2;
-  }
+html {
+    --bg-color: #E6F3EC;
+    --button-color: #E9D9C9;
+    --highlight: #9D674D;
+    --text-color: #967869;
+    --links-color: #9F9685;
+    --border-color: #f1d5d5;
+    --button-size: 200px;
+    --menu-height: 50px;
+    --menu-color: rgb(240, 239, 224);
 
 }
 
-ul.menu > ul{
-  >li{
-      position: relative;
+nav {
+    z-index: 1;
+    background: transparent;
+}
 
-      &::before{
-          content:'';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 100%;
-          width: 5%;
-          background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-          transform-origin: top;
-          transform: scale(1, 0);
-          transition: all 250ms linear;
-      }
+ul.menu {
+    display: flex;
+    flex-wrap: wrap;
 
-      &::after{
-          content:'';
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          height: 100%;
-          width: 5%;
-          background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-          transform-origin: top;
-          transform: scale(1, 0);
-          transition: all 250ms linear;
-      }
+    li {
+        position: relative;
+        width: var(--button-size);
+        height: var(--menu-height);
+        background-color: var(--menu-color);
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid var(--highlight);
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            line-height: var(--menu-height);
+            &:hover {
+                color: black;
+                transition: ease-in-out 0.5s;
+            }
+        }
+        div {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            line-height: var(--menu-height);
+            &:hover {
+                color: black;
+                transition: ease-in-out 0.5s;
+            }
+        }
+        &:hover {
+            overflow: visible;
+            ul {
+                position: absolute;
+                z-index: 1;
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+        }
+    }
 
-      &:hover{
-          &::after, &::before{
-              transform: scale(1, 1);
-          }
+    >li {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: var(--button-size);
+    }
+    ul {
+        opacity: 0;
+        transition: all 0.3s linear;
+        transform: scale(0, 0);
+        transform-origin: center top;
 
-      }
-  }
+        li a:hover {
+        color: black;
+        overflow: visible;
+    }
 
+}
+
+}
+
+#home i,
+#hamburger,
+#ch-menu {
+    display: none;
 }

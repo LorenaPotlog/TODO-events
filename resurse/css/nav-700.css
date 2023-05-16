@@ -1,39 +1,37 @@
-
-
 @media screen and (max-width: 700px) {
-    html {
-        --bg-color: #E6F3EC;
-        --button-color: #E9D9C9;
-        --highlight: #9D674D;
-        --text-color: #967869;
-        --links-color: #9F9685;
-        --border-color: #f1d5d5;
-        --menu-color: rgb(240, 239, 224);
+  html {
+    --bg-color: #E6F3EC;
+    --button-color: #E9D9C9;
+    --highlight: #9D674D;
+    --text-color: #967869;
+    --links-color: #9F9685;
+    --border-color: #f1d5d5;
+    --menu-color: rgb(240, 239, 224);
 
-        --page-padding: 20px;
-    }
+    --page-padding: 20px;
+  }
     ul.menu{
-        display: none;
-    }
+    display: none;
+  }
 
     #home:hover{
         .home-1000{
-            display: none;
-        }
+      display: none;
     }
+  }
     #hamburger{
-        display: block;
-      position: relative;
-      z-index: 2;
-    }
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
     #hamburger i{
-        color: var(--highlight);
-        display: block;
-        padding: 2%;
-        background-color: var(--menu-color);
-border: 1px solid var(--highlight); 
-border-radius: 10px;   
-}
+    color: var(--highlight);
+    display: block;
+    padding: 2%;
+    background-color: var(--menu-color);
+    border: 1px solid var(--highlight);
+    border-radius: 10px;
+  }
 
 #ch-menu:checked + ul.menu{
     display: block;
@@ -41,27 +39,29 @@ border-radius: 10px;
     transform-origin: left;
     transition: all 500ms linear;
 
-}
+  }
 
 ul.menu li:hover > ul {
-  display: block; 
-  mask-position: top; 
-  transition: mask-position 0.5s; 
+    display: block;
+    mask-position: top;
+    transition: mask-position 0.5s;
   -webkit-mask-image: linear-gradient(to top, black ,black);
-  mask-image: linear-gradient(to top, black, black);
+    mask-image: linear-gradient(to top, black, black);
   transition:all 0.5s linear;
 
-}
+  }
 
 ul.menu li:hover > ul li {
-  transition: background-color 0.5s; 
-  
+    transition: background-color 0.5s;
+
+  }
+
+  ul.menu li ul li {
+    position: relative;
+    display: block;
+    /* padding: 5px 0; */
+  }
+
 }
 
-ul.menu li ul li {
-  display: block;
-  padding: 5px 0;
-}
-
-}
 
