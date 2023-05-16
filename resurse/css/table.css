@@ -5,12 +5,12 @@ html {
     --text-color: #967869;
     --links-color: #9F9685;
     --border-color: #f1d5d5;
-    --odd-color:rgb(184, 144, 151);
+    --odd-color: rgb(184, 144, 151);
     --even-color: pink;
 }
 
 
-#schedule{
+#schedule {
     height: auto;
     width: auto;
     caption-side: bottom;
@@ -21,40 +21,41 @@ html {
     table-layout: fixed;
 }
 
-#schedule td:nth-child(odd){
+#schedule td:nth-child(odd) {
     border-right: 1px solid var(--odd-color);
 }
 
-#schedule td:nth-child(even){
+#schedule td:nth-child(even) {
     border-right: 1px solid var(--even-color);
 }
 
-#schedule td{
+#schedule td {
     border: 1px solid var(--highlight);
 }
 
-
-
-#schedule tbody{
+#schedule tbody {
     border-top: 3px solid var(--border-color);
     border-bottom: 3px solid var(--border-color);
 }
 
-#schedule tfoot,thead{
+#schedule tfoot,
+thead {
     font-weight: bold;
     border-top: 3px solid var(--border-color);
     border-bottom: 3px solid var(--border-color);
 }
 
 
-#schedule td, th, tfoot{
+#schedule td,
+th,
+tfoot {
     text-align: center;
     text-shadow: var(--highlight);
     padding-left: 20px;
     padding-right: 20px;
 }
 
-#schedule tr:hover{
+#schedule tr:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     transition: box-shadow 0.5s ease-in-out;
 }

@@ -1,17 +1,14 @@
-
-
-
-@media screen and (min-width:701px) and (max-width: 1001px){
-    html{
+@media screen and (min-width:701px) and (max-width: 1001px) {
+    html {
         --page-padding: 15px;
         font-size: 16px;
         padding-left: var(--page-padding);
         padding-right: var(--page-padding);
-     }
+    }
 
-     #page-grid {
+    #page-grid {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "zone-1 zone-1 "
             "zone-2 zone-3"
             "zone-4 zone-5"
@@ -20,9 +17,13 @@
 
     }
 
-    #office-schedule {
-        overflow-x:scroll;
+
+
+    #schedule {
+        overflow-x: scroll;
         overflow-y: hidden;
+        white-space: nowrap;
+        display: block;
     }
 
 }
