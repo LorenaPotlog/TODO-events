@@ -233,6 +233,10 @@ position: relative;}
     background-color: var(--button-color);
 }
 
+.iframe-tabs > p{
+    font-size: large;
+}
+
 
 /*Scroll*/
 

@@ -5,16 +5,16 @@
     video,
     figure,
     #link-top,
-    #home {
+    #home, #creativity{
         visibility: none;
         display: none;
     }
 
-    #page-grid{
+    #page-grid {
         display: block;
     }
 
-    #page-grid > section{
+    #page-grid > section {
         page-break-after: always;
 
     }
@@ -22,20 +22,24 @@
     ul.menu li ul {
         display: none;
     }
-    ul.menu #home-1000{
+
+    ul.menu #home-1000 {
         display: none;
-       }
-       ul.menu #home{
-        display: inline;
-       }
-    ul.menu li div{
-        display: block;
     }
-    
+
+    ul.menu #home {
+        display: inline;
+    }
+
+    ul.menu li div {
+        display: inline;
+    }
+
     .menu {
         page-break-after: always;
 
     }
+
     footer {
         page-break-before: always;
         bottom: 0;
@@ -43,15 +47,15 @@
 
     footer {
         page-break-after: always;
-    text-align: center;
+        text-align: center;
     }
-    
+
     a {
         text-decoration: none;
         color: black;
     }
 
-    #banner{
+    #banner {
         width: 70%;
         border: 4px solid black;
         position: absolute;
@@ -59,45 +63,46 @@
         left: 0;
         position: fixed;
     }
+
     #watermark {
         display: block;
         position: fixed;
         bottom: 0;
         right: 0;
-    
+
     }
 
     #watermark::after {
         opacity: 0.4;
         padding-right: 10px;
-        display:inline-block;
+        display: inline-block;
         border: 3px solid black;
-        border-radius:10px;
+        border-radius: 10px;
         content: "by Lorena Potlog";
         text-align: center;
         font-weight: bold;
-        width:4cm;
+        width: 4cm;
         height: 1cm;
         font-size: 0.4cm;
     }
 
 
 
-@page {
-    size: A4 portrait;
-    margin-bottom: 2cm;
-    margin-top: 2cm;
-    counter-increment: page;
+    @page {
+        size: A4 portrait;
+        margin-bottom: 2cm;
+        margin-top: 2cm;
+        counter-increment: page;
 
-}
+    }
 
-@page: left {
-    margin-left:3cm;
-    margin-right:1cm;
-}
+    @page: left {
+        margin-left: 3cm;
+        margin-right: 1cm;
+    }
 
-@page: right {
-    margin-right:3cm;
-    margin-left:1cm;
-}
+    @page: right {
+        margin-right: 3cm;
+        margin-left: 1cm;
+    }
 }
