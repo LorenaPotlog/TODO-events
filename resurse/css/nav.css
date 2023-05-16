@@ -1,8 +1,8 @@
-/* not done, to be checked */
 
 html {
-    --bg-color: #E6F3EC;
-    --button-color: #E9D9C9;
+    --bg-color-pink: #FFF0F5;
+    --bg-color-light:whitesmoke;
+   --button-color: #E9D9C9;
     --highlight: #9D674D;
     --text-color: #967869;
     --links-color: #9F9685;
@@ -15,28 +15,23 @@ html {
 
 nav {
     z-index: 1;
-    background: transparent;
+    background-color: var(--bg-color-pink);
+    width: 100%;
+    position: sticky;
 }
+
 
 ul.menu {
     display: flex;
     flex-wrap: wrap;
 }
 
-ul.menu>li {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: var(--button-size);
-}
-
 ul.menu li {
-    position: relative;
     width: var(--button-size);
     height: var(--menu-height);
-    background-color: var(--menu-color);
+    background-color: var(--bg-color-pink);
     overflow: hidden;
     text-align: center;
-    border: 1px solid var(--highlight);
 }
 
 ul.menu li div,
@@ -50,6 +45,7 @@ ul.menu li a {
 ul.menu li div:hover,
 ul.menu li a:hover {
     color: black;
+    font-weight: bold;
     transition: ease-in-out 0.5s;
 }
 
@@ -59,21 +55,21 @@ ul.menu li:hover {
 
 ul.menu ul li a:hover {
     color: black;
+    font-weight: bold;    
     overflow: visible;
-}
-
-ul.menu ul {
-    opacity: 0;
-    transition: all 0.3s linear;
-    transform: scale(0, 0);
-    transform-origin: center top;
 }
 
 ul.menu li:hover ul {
     position: absolute;
     z-index: 1;
     opacity: 1;
-    transform: scale(1, 1);
+    transform: scale(1,1);
+}
+
+ul.menu ul{
+    opacity: 0;
+    transform: scale(0,0);
+    transform-origin: center top;
 }
 
 #home i,

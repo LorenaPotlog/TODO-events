@@ -1,7 +1,8 @@
 @media screen and (max-width: 700px) {
   html {
-    --bg-color: #E6F3EC;
-    --button-color: #E9D9C9;
+    --bg-color-pink: #FFF0F5;
+    --bg-color-light:whitesmoke;
+        --button-color: #E9D9C9;
     --highlight: #9D674D;
     --text-color: #967869;
     --links-color: #9F9685;
@@ -28,7 +29,7 @@
     color: var(--highlight);
     display: block;
     padding: 2%;
-    background-color: var(--menu-color);
+    background-color: var(--bg-color-pink);
     border: 1px solid var(--highlight);
     border-radius: 10px;
   }
