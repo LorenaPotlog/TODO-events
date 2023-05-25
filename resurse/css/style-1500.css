@@ -220,6 +220,7 @@ footer iframe {
     border: 2px solid var(--border-color);
     background-color: var(--border-color);
     transition: background-color 1s;
+    text-align: center;
 }
 
 .iframe-container a {
@@ -317,53 +318,37 @@ footer iframe {
     transform: rotate(315deg);
     vertical-align: baseline;
 }
-/*stilizare link-uri din Etapa 4*/
 
-a{
+/*stilizare link-uri din Etapa 4*/
+  
+
+a:not(.menu-link,.iframe-tabs a){
     color: var(--link-color);
     font-weight: bold;
-}
+    background-image: radial-gradient(circle, var(--bg-color-pink) 0%, var(--bg-color-pink) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-size: 0;
+    transition: background-size 1s ease-in-out;
+  }
+
+a:hover {
+    background-size: 100%;
+  }
+  
 a:visited{
     color: var(--visited-link-color);
 }
 
-a[href^=http]::before{
-    content:"\2BB3";
+a[href^=http]:not(.iframe-tabs a)::before{
+    content:'\2BB3';
     font-size: 1.5em;
     transform: scale(1.5);
 }
 
 a[href^=http]:hover::before{
-   color:pink;
+   color:purple;
 }
 
-a:active{
+a:not(.menu-link,.iframe-tabs a):active{
     border: 1px solid black;
 }
-/*de facut pt iframe*/
-
-/*DE VERIFICAT ASTA PT STYLING*/
-a {
-    position: relative;
-    display: inline-block;
-  }
-  
-  a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: radial-gradient(circle, c1 0%, c1 40%, transparent 80%, transparent 100%);
-    background-position: center;
-    background-size: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: background-size 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-  
-  a:hover::before {
-    background-size: 100%;
-    opacity: 1;
-  }

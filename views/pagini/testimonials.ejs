@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../fragmente/head.ejs")%>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs")%>
+    <main>
+        <h1>Testimonials</h1>
+        <video controls style="width: 80%; height:auto" poster = "/resurse/images/testimonial_video-poster.jpeg"  preload="metadata">
+        <source src="resurse/video/testimonial.mp4" type="video/mp4">
+        <source src="resurse/video/testimonial.ogv" type="video/ogv">
+        <track src="resurse/video/tracks/caption_en.vtt" kind="captions" srclang="en" label="English" />
+        <track default src="resurse/video/tracks/caption_ro.vtt" kind="captions" srclang="ro" label="Romanian" />
+    </video>
+    </main>
+    <%- include("../fragmente/footer.ejs")%>
+</body>
+
+</html>

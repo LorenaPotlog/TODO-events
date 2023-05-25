@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "name": "todo-events",
+  "version": "1.0.0",
+  "description": "A website for an event organizer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorenaPotlog/events-organizer.git"
+  },
+  "keywords": [
+    "event",
+    "wedding",
+    "corporate",
+    "birthday",
+    "baptism",
+    "flowers",
+    "candybar",
+    "organizer",
+    "concerts",
+    "teambuilding"
+  ],
+  "author": "Lorena Potlog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorenaPotlog/events-organizer/issues"
+  },
+  "homepage": "https://github.com/LorenaPotlog/events-organizer#readme"
+}

@@ -1,0 +1,31 @@
+{
+    "base_path": "/resurse/images/errors",
+    "default_error": {
+      "title": "General error",
+      "text": "An unexpected error has occured.",
+      "image": "defaultError.png"
+    },
+    "info_errors": [
+      {
+        "identifier": 403,
+        "status": true,
+        "title": "403 - Forbidden",
+        "text": "Sorry, you're not allowed here.",
+        "image": "error_403.jpeg"
+      },
+      {
+        "identifier": 404,
+        "status": true,
+        "title": "404 - Page not found.",
+        "text": "We are sorry to disappoint but we don't have (yet) the page you are searching for.",
+        "image": "error_404.png"
+      },
+      {    
+      "identifier": 400,
+      "status": true,
+      "title": "400 - Bad request.",
+      "text": "Hmm. Seems like there was a mistake here. Please check for typos.",
+      "image": "defaultError.png"
+      }
+    ]
+  }
