@@ -9,3 +9,5 @@
     background-size: 0;
     transition: background-size 1s ease-in-out;
   } */ 
+
+  /* de verificat numar de telefon - / ^\+407[0-9]{8}*/

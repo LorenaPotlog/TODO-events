@@ -84,6 +84,8 @@ content: " \27A0 ";}
         "zone-5 zone-6 zone-7"
         "zone-8 zone-8 zone-8"
         "zone-8 zone-8 zone-8"
+        "zone-9 zone-9 zone-9"
+        "zone-9 zone-9 zone-9"
     ;
     grid-gap: 1em;
 
@@ -126,6 +128,10 @@ content: " \27A0 ";}
 
 #creativity {
     grid-area: zone-8;
+    margin-bottom: 20px;
+}
+#creativity2 {
+    grid-area: zone-9;
     margin-bottom: 20px;
 }
 

@@ -1,9 +1,11 @@
 const express = require('express');
 const path=require('path');
 const fs = require('fs');
+const sharp = require('sharp')
 
 obGlobal={
-    errors:[]
+    errors:[],
+    obImages:[]
 }
 
 app=express();
@@ -32,8 +34,10 @@ app.use("/resurse",express.static(path.join(__dirname,"resurse")))
 //put pt editare si delete pt stergere
 
 
-app.get(['/', '/index', '/home'], function(req, res) { 
-    res.render("pagini/index"); });
+app.get(["/index", "/", "/home"], function(req, res){
+    res.render("pagini/index", {ip:req.ip, images: obGlobal.obImages.images});
+});
+//pentru erori 
 
 function initErrors(){
     let errorInput = fs.readFileSync(path.join(__dirname,"resurse/json/errors.json").toString("utf8"));
@@ -71,6 +75,50 @@ function displayError(res, _identifier=-1, {_title, _text, _image}={}){
 
 initErrors();
 
+//Pentru galeria statica
+
+function initImages(){
+    var imagesInput = fs.readFileSync(__dirname+"/resurse/json/gallery.json").toString("utf-8");
+    
+    obGlobal.obImages = JSON.parse(imagesInput);
+    let vImages =  obGlobal.obImages.images;
+
+    // d = new Date("25 April 2023 12:00:00");
+
+    // for(let imag of obGlobal.obImages.imagini){
+    //     if(imag.timp && (d.getHours() >= 5 && d.getHours() < 12 && imag.timp.includes("dimineata")) ||
+    //         (d.getHours() >= 12 && d.getHours() < 20 && imag.timp.includes("zi")) ||
+    //         ((d.getHours() >= 20 || d.getHours() < 5) && imag.timp.includes("noapte"))) {
+    //         vImagini.push(imag);
+    //     }
+    // }
+
+    let absPath = path.join(__dirname, obGlobal.obImages.gallery_path);
+    let absPathMedium = path.join(absPath, "medium");
+    let absPathSmall = path.join(absPath, "small");
+
+    if(!fs.existsSync(absPathMedium))
+        fs.mkdirSync(absPathMedium);
+    
+    if(!fs.existsSync(absPathSmall))
+        fs.mkdirSync(absPathSmall);
+
+    
+    for(let img of vImages) {
+        [imageName, ext] = img.image_path.split(".");
+        let imageAbsPath = path.join(absPath, img.image_path);
+        let imageAbsPathMedium = path.join(absPathMedium, imageName+".webp");
+        let imageAbsPathSmall = path.join(absPathSmall, imageName+".webp");
+        sharp(imageAbsPath).resize(400).toFile(imageAbsPathMedium);
+        sharp(imageAbsPath).resize(200).toFile(imageAbsPathSmall);
+
+        img.image_path_medium = "/" + path.join(obGlobal.obImages.gallery_path, "medium" ,imageName+".webp");
+        img.image_path_small = "/" + path.join(obGlobal.obImages.gallery_path, "small" ,imageName+".webp");
+        img.image_path =path.join(obGlobal.obImages.gallery_path, img.image_path);
+    }
+}
+initImages();
+
 app.get("/favicon.ico",function(req,res){
     res.sendFile(path.join(__dirname, "resurse/ico/favicon.ico"))
 })
@@ -80,7 +128,7 @@ app.get("/*.ejs", function(req, res){
 })
 
 
-//not working well
+//not working well /^\/resurse(\/[a-zA-Z0-9]*)*$/
 app.use("/resurse/:subfolder*?", function(req, res){ 
     displayError(res, 403);
 }) 
