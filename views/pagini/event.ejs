@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+    <section>
+        <h2>Event</h2>
+            <article id="art-event">
+                <figure class="img-event">
+                    <img  src="/resurse/images/events/<%- locals.event.imagine %>" alt="[image <%- locals.event.denumire %>]" />
+                </figure> 
+                <h3><span class="denumire"><%- locals.event.denumire%></span></h3>
+                <p>Description: <span class="descriere"><%- locals.event.descriere %> </span></p>
+                <p>Organization price (excl. services): <span class="cost_organizare"><%- locals.event.cost_organizare %> </span></p>
+                <p>Total price (incl. organization and services): <span class="cost_total"><%- locals.event.cost_total %> </span></p>
+                <p>Included services: <span class="servicii_incluse"><%- locals.event.servicii_incluse %> </span></p>
+                <p>Type of menu: <span class="meniu"><%- locals.meniu %> </span></p>
+                <p>Event size: <span class="marime"><%- locals.event.marime %> </span></p>
+                <p>Can you pay with vouchers: <span class="plata_vouchere"><%- locals.event.plata_vouchere %> </span></p>
+    
+            </article>
+        
+    </section>
+</main>
+<%- include("../fragmente/footer.ejs") %>
+</body>
+</html>
