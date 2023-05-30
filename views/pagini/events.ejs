@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+
+        <!-- input de tip text -->
+        <label> Name of event: <input type="text" id="inp-denumire"></label>
+
+         <!-- input de tip range. -->
+         <div id="price-range" class="">
+            <label class="form-label"> Min.Total Price (incl. services) </label>
+            <span>(300)</span><span id=""><input type="range" id="inp-pret"
+                    class="form-range" value="0" min="300" step="100" max="4000" onchange="getSelectedValue()"
+                    style="display: inline-block;"></span> <span id="infoRange">(4000)</span><span
+                id="val_select">(0)</span>
+        </div>
+
+        <!-- datalist -->
+        <div class="row">
+            <div class="col-md-3">
+                <label for="event-menu">Offered menu type:</label>
+                <input list="event-menu" name="event-menu" id="inp-event-menu">
+                <datalist id="event-menu">
+                    <option value="All" selected id="">Select all</option>
+                    <option value="Traditional">
+                    <option value="Vegan">
+                    <option value="Vegetarian">
+                    <option value="Pescatarian">
+                </datalist>
+            </div>
+
+        <!-- grup de inputuri de tip radio -->
+        <div> Event size<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>Small (Guests &lt; 50)
+                <input id="i_rad1"  name="gr_rad" value="0:50" type="radio"/>
+            </label></p>
+            <p><label>Medium (50 &le; Guests &lt; 400)
+                <input id="i_rad2"  name="gr_rad" value="50:400" type="radio"/>
+            </label></p>
+            <p><label>Large (400 &le; Guests &lt; 1000)
+                <input id="i_rad3" name="gr_rad" value="400:1000" type="radio"/>
+            </label></p>
+            <p><label>X-Large (1000 &le; Guests)
+                <input id="i_rad3" name="gr_rad" value="1000:1000000000" type="radio"/>
+            </label></p>
+            <p><label>Select all
+                <input id="i_rad4" checked name="gr_rad" value="all" type="radio"/>
+            </label></p>
+        </div>
+
+
+            <!-- input de tip checkbox sau grup de inputuri de tip checkbox -->
+            <div id="certificari-cont" class="col-md-3">
+                <fieldset>
+                    <legend>Preferred season:</legend>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="cert-dot"
+                            name="anotimp" value="Summer">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Summer</label>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="cert-ece"
+                            name="anotimp" value="Winter">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Winter</label>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="cert-oricare"
+                            name="anotimp" value="Any season" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Any season</label>
+                    </div>
+        
+            <!-- select simplu -->
+            <p>
+             <label> Type of event:
+            <select id="inp-categorie">
+                <option id="all" selected value="all">Show all</option>
+                <%
+                const uniqueCategories = new Set();
+                for (let option of locals.options) {
+                  uniqueCategories.add(option.categorie);
+                }
+              %>
+              
+              <% Array.from(uniqueCategories).forEach((category) => { %>
+                <option value="<%- category %>"> <%- category %> </option>
+              <% }); %>
+            </select> 
+        </label>
+    </p>
+
+    <!-- select multiplu -->
+    <div id="services-container" class="">
+        <label>Included services::
+            <select id="inp-services" multiple>
+                <option value="All" selected id="">All</option>
+                <option value="Food & Beverages">Food & Beverages</option>
+                <option value="Music">Music</option>
+                <option value="Cocktail bar">Cocktail bar</option>
+                <option value="Video">Video</option>
+                <option value="Photo">Photo</option>
+                <option value="Candy bar">Candy bar</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- pentru carcateristica booleană se vor face doua butoane de tip radio -->
+    
+    <div class="row">
+        <div id="shr-container" class="col-md-6">
+            <h3>Payment with vouchers:</h3><!-- tdebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>Yes
+                    <input id="s_rad1" name="s_rad" value="true" type="radio" />
+                </label></p>
+            <p><label>No
+                    <input id="s_rad2" name="s_rad" value="false" type="radio" />
+                </label>
+            <p><label>Show all options
+                    <input id="s_rad3" name="s_rad" value="all" type="radio" checked />
+                </label>
+        </div>
+    </div>
+
+        <p>
+        
+        <button id="filter">Filter</button> 
+        <button id="reset">Reset</button><br/>
+        <button id="sortCresc">Ascending order after organization price and event size</button>
+        <button id="sortDescresc">Descending order after organization price and event size</button>
+        
+        </p>
+        
+        <p id="p-suma">Press Alt+"c" to find out the total organization price of the shown events. </p>
+        
+        <section id="events">
+            <h2>Events</h2>
+            <div class="grid-events">
+                <% for( let event of locals.events) { %>
+                    <article class="event" >
+                        <h3 class="denumire">Name of event: <a href="/event/<%- event.id%>" ><span class="val-denumire"><%- event.denumire%></span></a></h3>
+                        <div class="info-event">
+                            <p class="cost_total">Total price: <span class="val-cost_total"><%- event.cost_total%></span></p>
+                            <p class="marime">Event size: <span class="val-marime"><%- event.marime%></span></p>
+                            <p>Included services: <span class="servicii_incluse"><%- event.servicii_incluse %> </span></p>
+                        </div>
+                        <p>Description: <span class="descriere"><%- event.descriere %> </span></p>
+                        <p class="categorie">Category: <span class="val-categorie"><%- event.categorie%></span></p>
+                        <figure>
+                            <a href="/event/<%- event.id %>" ><img src="/resurse/images/events/<%- event.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- event.denumire %>]" /></a>
+                        </figure>
+
+
+                        <!-- de formatat data -->
+                        <p>Next available date: <time datetime="YYYY-MM-DD" class="data_disponibila"><%- event.data_disponibila
+                            %> </time> </p>
+                        <p>Can you pay with vouchers: <span class="plata_vouchere">
+                            <% if (event.plata_vouchere) { %>
+                              Yes!
+                            <% } else { %>
+                              No.
+                            <% } %>
+                          </span></p>
+                    
+                        </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

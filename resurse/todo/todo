@@ -11,3 +11,6 @@
   } */ 
 
   /* de verificat numar de telefon - / ^\+407[0-9]{8}*/
+  /*de verificat de ce counterul nu mi ia fix 10 imagini, din index.js*/
+
+  /*de reparat gridul dupa bootstrap*/
