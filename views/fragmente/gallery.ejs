@@ -1,30 +1,15 @@
 <div id="gallery-grid">
-    <% let count = 0; %> 
-    <% for (let img of locals.images) { 
-        function check_time(time) {
-    
-        let d = new Date();
-        let startTime = time.split("-")[0].split(":")
-        let endTime = time.split("-")[1].split(":")
-
-        return (
-                (d.getHours() > startTime[0] || d.getHours() == startTime[0] && d.getMinutes() >= startTime[1]) &&
-                (d.getHours() < endTime[0] || d.getHours() == endTime[0] && d.getMinutes() <= endTime[1])
-            );
-        }
-
-        if ((img.time && check_time(img.time) || !img.time) && count++ <= 10) {
-
-        %>
+    <% let count = 0;
+        for(let img of obGlobal.obImages.images) { 
+            if(count > 11) break;
+            %>
         <figure class="grid-item">
             <picture>
                 <source srcset="<%- img.image_path_medium %>" media="(max-width: 1000px)" />
                 <source srcset="<%- img.image_path_small %>" media="(max-width: 700px)" />
-                <img src="<%- img.image_path %>" width = "80%" alt="logo">
+                <img src="<%- img.image_path %>" width = "100%" alt="logo">
             </picture>
             <figcaption><%- img.title %></figcaption>
         </figure>
-    <% }  %>
-    <% }  %>
-
+        <% } %>
 </div>

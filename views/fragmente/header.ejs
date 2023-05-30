@@ -22,20 +22,22 @@
 
             <ul>
                 <li><a class = "menu-link" href="/home#welcome">Welcome</a></li>
-                <li><a class = "menu-link" href="/home#bits-and-pieces">Bits and pieces</a></li>
-                <li><a class = "menu-link" href="/home#team">The team</a></li>
                 <li><a class = "menu-link" href="/home#good-to-know">Good to know</a></li>
+                <li><a class = "menu-link" href="/home#calendar">Calendar</a></li>
+                <li><a class = "menu-link" href="/home#users">Users</a></li>
+                <li><a class = "menu-link" href="/home#announcements">Announcements</a></li>
+                <li><a class = "menu-link" href="/home#users-stats">User stats</a></li>
+                <li><a class = "menu-link" href="/home#server">Server</a></li>
+                <li><a class = "menu-link" href="/home#our-work">Our work</a></li>
+                <li><a class = "menu-link" href="/home#reviews">Reviews</a></li>
             </ul>
         </li>
 
-        <li>
-            <div>Events</div>
-            <ul>
-                <li><a class = "menu-link" href="#">Wedding</a></li>
-                <li><a class = "menu-link" href="#">Birthday</a></li>
-                <li><a class = "menu-link" href="#">Gender reveal</a></li>
-                <li><a class = "menu-link" href="#">Corporate</a></li>
-                <li><a class = "menu-link" href="#">Other</a></li>
+        <li><a class="" href="/events">Events</a>
+            <ul class="">
+            <%for (let option of obGlobal.menuOptions) {%>
+                <li><a class="nav-bar-link" href="/events?category=<%- option%>"><%- option%></a></li>
+            <%}%>
             </ul>
         </li>
 
@@ -50,10 +52,9 @@
         </li>
 
         <li>
-            <div>Portfolio</div>
+            <div><a href="/portfolio">Portfolio</a></div>
             <ul>
-                <li><a class = "menu-link" href="#">3D Tur</a></li>
-                <li><a class = "menu-link" href="/galerie">Photos & Videos</a></li>
+                <li><a class = "menu-link" href="/photos-and-videos">Photos & Videos</a></li>
                 <li><a class = "menu-link" href="/testimonials">Testimonials</a></li>
             </ul>
         </li>
@@ -61,9 +62,9 @@
         <li>
             <div>About us</div>
             <ul>
-                <li><a class = "menu-link" href="#">Team</a></li>
-                <li><a class = "menu-link" href="#">Office</a></li>
-                <li><a class = "menu-link" href="#">Partners</a></li>
+                <li><a class = "menu-link" href="/team">Team</a></li>
+                <li><a class = "menu-link" href="/office">Office</a></li>
+                <li><a class = "menu-link" href="/partners">Partners</a></li>
             </ul>
         </li>
 

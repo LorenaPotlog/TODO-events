@@ -6,14 +6,34 @@
 <body>
     <%- include("../fragmente/header.ejs") %>
     <main>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu tortor ante. Aenean dapibus
-            sagittis dignissim. Nam pellentesque ante nec ipsum vestibulum lobortis. Etiam vulputate, sem a
-            molestie euismod, metus est semper mauris, eu molestie tortor quam eget tortor. Quisque malesuada
-            dui ac tristique dictum. Morbi elementum orci sed interdum suscipit. Morbi purus lacus, mollis non
-            est a, efficitur bibendum quam. Donec tristique nisl sed enim mollis, rutrum fringilla eros
-            pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius
-            risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus
-            ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
+        <div class="container">
+            <form action="action_page.php">
+          
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+              <label for="phone">Phone number (Optional) </label>
+              <input type="text" id="phone" name="phone-number" placeholder="Your mobile number..">
+          
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="New appointment">New appointment</option>
+                <option value="Consultation">Consultation</option>
+                <option value="I just have some questions">I just have some questions</option>
+                <option value="I'm a company. I want to work with you as a partner.">I'm a company. I want to work with you as a partner.</option>
+                <option value="Other">Other</option>
+              </select>
+          
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+          
+            </form>
+          </div>
             </main>
     <%- include("../fragmente/footer.ejs") %>
 </body>
