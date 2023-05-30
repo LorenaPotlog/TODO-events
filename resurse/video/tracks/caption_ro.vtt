@@ -1,0 +1,32 @@
+WEBVTT
+
+STYLE
+::cue {
+    color: black;
+    background-color: white;
+}
+
+::cue(u){
+ text-decoration: underline;
+ }
+
+ ::cue(b){
+  font-weight:bolder;
+ }
+
+1
+00:00:00.000 --> 00:00:02.614 aling:center line:0
+Aici îi vedem pe Mihai și Alina.
+
+2
+00:00:02.686 --> 00:00:05.757 aling:center line:0
+Un cuplu minunat al căror <u>eveniment</u> am avut onoarea organizării.
+
+3
+00:00:06.000 --> 00:00:10.029 aling:center line:0
+<b>Nunta lor</b>!
+
+4
+00:00:10.030 --> 00:00:16.600 aling:center line:0
+Haideți să vedem împreuna ce ne pot împărtăși din acea zi specială!
+

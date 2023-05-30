@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+        <div id="office-container">
+        <video autoplay loop muted src="/resurse/video/background.mp4" ></video>
+        <div id="office-container-map">
+            <figure class="">
+                <img src="/resurse/images/office/map.jpg" alt="logo">
+                <figcaption>Directions from city center.</figcaption>
+            </figure>
+
+            <!-- <figure class="">
+                <img src="/resurse/images/office/office.jpg" alt="logo">
+                <figcaption>Our lovely office.</figcaption>
+            </figure> -->
+        </div>
+        <div id="office-container-details">
+            <h3>Where to find our office:</h3>
+            <p>We are located in Bucharest on Academy street no. 14, 010014. If you are coming from the South part, you can take
+                M3 and go until the Atheneum. 
+            </p>
+            <p>You don't need a reservation if you want to have a quick chat with us but please feel free to <a href="/contact" target="_blank">book</a> your slot
+                if you want to have a longer and relaxed discussion!
+            </p>
+            <p>Please make sure to check our <a href="/home#good-to-know">office schedule</a>.</p>
+            <p>We hope to see you soon!</p>
+            <p id="hover">Hover below for a surprise.</p>   
+            <figure class="hover">
+                <img src="/resurse/images/office/office.jpg" alt="logo">
+                <figcaption >Our lovely office.</figcaption>
+            </figure> 
+        </div>
+        </div>
+
+    </main>
+    <br><br>
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

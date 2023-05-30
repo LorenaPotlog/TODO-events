@@ -1,0 +1,73 @@
+<header>
+    <h1>TODO <span>events</span></h1>
+    <!-- <picture>
+        <source srcset="./resurse/logo/peony-80.jpg" media="(max-width:700px)" />
+        <source srcset="./resurse/logo/peony-100.jpg" media="(max-width:1200px)" />
+        <img src="./resurse/logo/peony-150.jpg" alt="logo"fa-regular fa-solid fa-house />
+    </picture> -->
+</header>
+
+<nav>
+    <label id="hamburger" for="ch-menu">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+    <input id="ch-menu" type="checkbox">
+
+    <ul class="menu">
+        <li>
+            <div id="home">
+                <i class="fa-solid fa-regular fa-house"></i>
+                <a class = "menu-link" href="#home" class="home-1000">Home</a>
+            </div>
+
+            <ul>
+                <li><a class = "menu-link" href="/home#welcome">Welcome</a></li>
+                <li><a class = "menu-link" href="/home#good-to-know">Good to know</a></li>
+                <li><a class = "menu-link" href="/home#calendar">Calendar</a></li>
+                <li><a class = "menu-link" href="/home#users">Users</a></li>
+                <li><a class = "menu-link" href="/home#announcements">Announcements</a></li>
+                <li><a class = "menu-link" href="/home#users-stats">User stats</a></li>
+                <li><a class = "menu-link" href="/home#server">Server</a></li>
+                <li><a class = "menu-link" href="/home#our-work">Our work</a></li>
+                <li><a class = "menu-link" href="/home#reviews">Reviews</a></li>
+            </ul>
+        </li>
+
+        <li><a class="" href="/events">Events</a>
+            <ul class="">
+            <%for (let option of obGlobal.menuOptions) {%>
+                <li><a class="nav-bar-link" href="/events?category=<%- option%>"><%- option%></a></li>
+            <%}%>
+            </ul>
+        </li>
+
+        <li>
+            <div>Services</div>
+            <ul>
+                <li><a class = "menu-link" href="#">Food & Beverages</a></li>
+                <li><a class = "menu-link" href="#">Photo & Video</a></li>
+                <li><a class = "menu-link" href="#">Music</a></li>
+                <li><a class = "menu-link" href="#">Locations</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <div><a href="/portfolio">Portfolio</a></div>
+            <ul>
+                <li><a class = "menu-link" href="/photos-and-videos">Photos & Videos</a></li>
+                <li><a class = "menu-link" href="/testimonials">Testimonials</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <div>About us</div>
+            <ul>
+                <li><a class = "menu-link" href="/team">Team</a></li>
+                <li><a class = "menu-link" href="/office">Office</a></li>
+                <li><a class = "menu-link" href="/partners">Partners</a></li>
+            </ul>
+        </li>
+
+        <li><a class = "menu-link" href="/contact">Contact</a></li>
+    </ul>
+</nav>

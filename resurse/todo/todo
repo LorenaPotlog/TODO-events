@@ -1,0 +1,13 @@
+/* in video/tracks captions to align and line text for all */
+
+/*de facut cumva sa fie culoarea doar cat e scrisul*/
+/* a{
+    color: var(--link-color);
+    font-weight: bold;
+    background-image: radial-gradient(circle, var(--bg-color-pink) 0%, var(--bg-color-pink) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-size: 0;
+    transition: background-size 1s ease-in-out;
+  } */ 
+
+  /* de verificat numar de telefon - / ^\+407[0-9]{8}*/

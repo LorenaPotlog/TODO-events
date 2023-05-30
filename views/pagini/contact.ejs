@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+        <div class="container">
+            <form action="action_page.php">
+          
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+              <label for="phone">Phone number (Optional) </label>
+              <input type="text" id="phone" name="phone-number" placeholder="Your mobile number..">
+          
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="New appointment">New appointment</option>
+                <option value="Consultation">Consultation</option>
+                <option value="I just have some questions">I just have some questions</option>
+                <option value="I'm a company. I want to work with you as a partner.">I'm a company. I want to work with you as a partner.</option>
+                <option value="Other">Other</option>
+              </select>
+          
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+          
+            </form>
+          </div>
+            </main>
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

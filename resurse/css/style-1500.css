@@ -7,6 +7,9 @@ html {
     --links-color: #9F9685;
     --border-color: #f1d5d5;
 
+    --link-color: rgba(20, 20, 95, 0.49);
+    --visited-link-color: purple;
+
     --grid-bg-color:floralwhite;
     --grid-highlight-color:linen;
     --page-padding: 20px;
@@ -14,14 +17,13 @@ html {
 
 
 
-    background-color: var(bg-color);
     color: var(--text-color);
     transition: font-size 0.3s ease;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
-    padding-left: var( --display-padding);
-    padding-right: var(--display-padding);
-    overflow: auto;
+    padding-left: var( --page-padding);
+    padding-right: var(--page-padding);
+    /* overflow: auto; */
 }
 
 header {
@@ -43,11 +45,16 @@ h2 {
     font-weight: bold;
     padding-top: var(--page-padding);
     padding-bottom: var(--page-padding);
+    text-align: center;
+}
+
+h2:hover{
+    color:black;
 }
 
 h3 {
     font-size: 1.5vw;
-    text-align: center;
+    /* text-align: center; */
     font-weight: bold;
     padding-top: var(--page-padding);
     padding-bottom: var(--page-padding);
@@ -61,7 +68,7 @@ table{
 }
 
 #announcements > p{
-    padding-top: 1%;
+    padding-top: 4%;
 } 
 
 #announcements > p::before{
@@ -80,8 +87,7 @@ content: " \27A0 ";}
         "zone-2 zone-2 zone-4"
         "zone-5 zone-6 zone-7"
         "zone-8 zone-8 zone-8"
-        "zone-8 zone-8 zone-8"
-    ;
+        "zone-8 zone-8 zone-8";
     grid-gap: 1em;
 
 }
@@ -121,22 +127,14 @@ content: " \27A0 ";}
     grid-area: zone-7;
 }
 
-#creativity {
+#our-work {
     grid-area: zone-8;
     margin-bottom: 20px;
 }
-
-#news {
-    display: none;
-}
-
-#team {
-    display: none;
-}
-
-#bits-and-pieces {
-    display: none;
-}
+/* #reviews {
+    grid-area: zone-9;
+    margin-bottom: 20px;
+} */
 
 /*math formula*/
 
@@ -166,8 +164,7 @@ footer {
 
 footer a {
     display: block;
-    margin-bottom: 10px;
-    font-size: small;
+    font-size: 0.8em;
     padding-left: 1%;
 
 }
@@ -184,13 +181,7 @@ footer iframe {
 
 #copyright {
     text-align: center;
-    font-size: small;
-
-}
-
-#banner {
-    text-align: center;
-    font-size: small;
+    font-size: 0.5em;
 }
 
 /* Iframe*/
@@ -217,14 +208,16 @@ footer iframe {
     border: 2px solid var(--border-color);
     background-color: var(--border-color);
     transition: background-color 1s;
+    text-align: center;
 }
 
-.iframe-container a:link {
+.iframe-container a {
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 0 0 20px 20px;
     margin-left: 10px;
     font-weight: bolder;
+    width: 10%;
 }
 
 .iframe-tabs a:hover {
@@ -313,3 +306,338 @@ footer iframe {
     transform: rotate(315deg);
     vertical-align: baseline;
 }
+
+/*stilizare link-uri din Etapa 4*/
+  
+
+a:not(.menu-link,.iframe-tabs a){
+    color: var(--link-color);
+    font-weight: bold;
+    background-image: radial-gradient(circle, var(--bg-color-pink) 0%, var(--bg-color-pink) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-size: 0;
+    transition: background-size 1s ease-in-out;
+  }
+
+a:hover {
+    background-size: 100%;
+  }
+  
+a:visited{
+    color: var(--visited-link-color);
+}
+
+a[href^=http]:not(.iframe-tabs a)::before{
+    content:'\2BB3';
+    font-size: 1.5em;
+    transform: scale(1.5);
+}
+
+a[href^=http]:hover::before{
+   color:purple;
+}
+
+a:not(.menu-link,.iframe-tabs a):active{
+    border: 1px solid black;
+}
+
+/*design pentru pagina Partners*/
+
+
+
+#partners img{
+    border: 2px solid var(--highlight);
+    border-radius: 5%;
+    width: 100%;
+}
+
+#partners p{
+    padding-bottom: 1%;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+}
+
+/*design pentru pagina office*/
+
+#office-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: opacity(2)
+}
+
+#office-container img {
+    width: 50%;
+    border-radius: 10%;
+}
+
+#office-container-map figcaption {
+    visibility: hidden;
+}
+
+#office-container-map img{
+    padding: 10%;
+    transition: transform 0.3s ease;
+}
+
+#office-container-map img:hover{
+    transform:scale(1.5,1.5);
+    overflow: hidden;
+}
+
+#office-container-details{
+    text-align: center;
+    position: relative;
+    top:20%;
+    right: 20%;
+}
+
+#office-container-details p{
+    padding-top: 4%;
+    padding-bottom: 2%;
+
+    background-color:white;
+    font-weight: bolder;
+}
+
+/*folosind pseduo-clasa ::selection*/
+
+#office-container-details p::selection{
+   color:black;
+   background-color: pink;
+}
+
+
+#office-container-details figure{
+   padding-top: 3%;
+   border-radius: 10%;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+
+#office-container-details #hover{
+    background-color: transparent;
+}
+
+
+#office-container-details figure:hover{
+    opacity: 0.7;
+}
+
+
+#office-container-details #hover {
+    font-style: italic;
+ }
+
+ /*design pentru calendar*/
+ .calendar-container {
+    max-width: 800px;
+    border: 5px solid var(--bg-color-pink);
+  }
+
+/*background cu video*/
+#office-container video{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 50%;
+}
+
+/*efect-css-reflexie-text*/
+#text-reflectat{
+	transform-origin:0 0;
+	/*conetaza ordinea transformarilor!*/
+	transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px,-25px); 
+	opacity:0.55;
+    filter:blur(2px);
+    transition: all 0.3s ease;
+}
+
+#text-reflectat:hover {
+    transform: rotateX(180deg) skew(-45deg) scaleY(1) translate(10px, -40px); 
+  }
+
+
+#text{	
+	position:relative;
+}
+
+#text, #text-reflectat{
+	font-size:3vw;
+	font-weight: bold;
+}
+
+/* text care se plimba orizontal sau vertical - This is a school project - trebuie optimizat, fara scrollbar*/
+#banner {
+    white-space: nowrap;
+    width: 100%;
+    animation: scroll-horizontal 5s linear infinite;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-80%);
+      overflow: hidden;
+
+    }
+    
+} 
+ 
+#scroll {
+    overflow: hidden;
+}
+
+.gallery{
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    margin-bottom: 5rem;
+}
+
+.gallery figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255,255,255,0.7);
+    width: 100%;
+    text-align: center;
+}
+
+#derulant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: absolute;
+    animation-name: gal1;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+}
+
+#derulant>* {
+    flex-shrink: 0;
+}
+
+.gallery figure {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+/* .gallery #derulant:hover figure {
+    animation-play-state: paused;
+    cursor: pointer;
+  } */
+
+  @keyframes gal1{
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -600%;
+    }
+  }
+
+/* #animated-gallery  figure:nth-of-type(1) {
+    animation-delay: 18s;
+}
+#animated-gallery  figure:nth-of-type(2) {
+    animation-delay: 50s;
+}
+#animated-gallery  figure:nth-of-type(3) {
+    animation-delay: 40s;
+}
+#animated-gallery  figure:nth-of-type(4) {
+    animation-delay: 5s;
+}
+#animated-gallery  figure:nth-of-type(5) {
+    animation-delay: 2s;
+}
+#animated-gallery  figure:nth-of-type(6) {
+    animation-delay: 0s;
+} */
+
+/*   
+  #animated-gallery figure:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  #animated-gallery figure:nth-child(2) {
+    animation-delay: 3s;
+  }
+  
+  #animated-gallery figure:nth-child(3) {
+    animation-delay: 6s;
+  }
+  
+  #animated-gallery figure:nth-child(4) {
+    animation-delay: 9s;
+  }
+  
+  #animated-gallery figure:nth-child(5) {
+    animation-delay: 12s;
+  }
+  
+  #animated-gallery figure:nth-child(6) {
+    animation-delay: 16s;
+  }
+
+
+@keyframes gallery1{
+    0% {
+        opacity: 1;
+        z-index:1;
+      }
+      5.5555555556% {
+        opacity: 1;
+      }
+      8.1111111111% {
+        opacity: 1;
+      }
+      11.1111111111% {
+        opacity: 1;
+
+        transform: translateX(-50%);
+      }
+      94.4444444444% {
+        opacity: 0;
+        transform: translateX(100%);
+    
+      }
+      100% {
+        opacity: 1;
+        z-index:1;
+
+      }
+    } */
+
+/*portfolio page*/
+#portfolio-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+#portfolio-details  p {
+    font-size: 1em;
+    font-style: italic;
+    padding-top: 20%;
+}
+
+/*folosind pseduo-clasa ::selection*/
+
+#portfolio-details  p::selection{
+    color:black;
+    background-color: pink;
+ }

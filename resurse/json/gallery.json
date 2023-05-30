@@ -1,0 +1,72 @@
+{
+    "gallery_path": "/resurse/images/gallery",
+    "images": [
+      {
+        "image_path": "wedding.png",
+        "title": "Andrei & Mihaela",
+        "text": "descriere",
+        "time": "10:00 - 15:00"
+      },
+      {
+        "image_path": "wedding1.png",
+        "title": "Andrei & Mihaela",
+        "text": "descriere",
+        "time": "10:00 - 15:00"
+      },
+      {
+        "image_path": "wedding2.png",
+        "title": "Alina & Bogdan",
+        "text": "descriere",
+        "time": "10:00 - 15:00"
+      },
+      {
+        "image_path": "teambuilding.png",
+        "title": "Google",
+        "text": "descriere",
+        "time": "10:00 - 15:00"
+    },
+    {
+      "image_path": "gender-reveal.png",
+      "title": "Jena",
+      "text": "descriere",
+      "time": "10:00 - 15:00"
+    },
+    {
+        "image_path": "corporate.png",
+        "title": "Amazon",
+        "text": "descriere",
+        "time": "10:00 - 15:00"
+      },
+      {
+        "image_path": "concert.png",
+        "title": "The night pub",
+        "text": "descriere",
+        "time": "15:00 - 22:00"
+      },
+      {
+        "image_path": "birthday.png",
+        "title": "Wedding of Maria & Andrei",
+        "text": "descriere",
+        "time": "15:00 - 22:00"
+      },
+      {
+        "image_path": "baptism1.png",
+        "title": "Maria",
+        "text": "M",
+        "time": "15:00 - 22:00"
+    },
+    {
+      "image_path": "baptism.png",
+      "title": "George",
+      "text": "descriere",
+      "time": "15:00 - 22:00"
+    }
+    ,
+    {
+        "image_path": "bachelorette.png",
+        "title": "Andreea & the girls",
+        "text": "descriere",
+        "time": "18:00 - 22:00"
+      }
+    ]
+}
