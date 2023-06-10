@@ -4,6 +4,7 @@
         font-size: 16px;
         padding-left: var(--page-padding);
         padding-right: var(--page-padding);
+
     }
 
     #page-grid {
@@ -24,4 +25,10 @@
         display: block;
     }
 
+    /*design pentru calendar*/
+ .calendar-container {
+    overflow: scroll;
+    white-space: nowrap;
+    display: block;
+}
 }

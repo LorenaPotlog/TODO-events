@@ -1,0 +1,52 @@
+@use "../../node_modules/bootstrap/scss/bootstrap.scss" with (
+    
+    // dimensiuni de ecran diferite pentru ecrane medii și mari
+    $grid-breakpoints: (md: 700px, lg: 1000px),
+
+      // culorile de background
+      $primary: #FFF0F5,
+      $secondary: whitesmoke,
+
+      //culori de font
+      $body-color:#967869,
+    
+    //dimensiunea razelor de border
+    $border-radius: 10px,
+    $border-radius-lg: 0.2rem,
+    //de modificat!!
+
+    // dimensiunea literelor  headingurilor
+    $h1-font-size: 2.4 rem,
+    $h2-font-size: 2 rem,
+
+
+    // familia de font implicită
+    $font-family-sans-serif: "Raleway",
+    $font-size-base: 1rem,
+
+    $display-font-sizes: (
+        1: 6rem,
+        2: 5.5rem,
+        3: 4rem,
+        4: 3.5rem,
+        5: 3rem,
+        6: 2.5rem
+),
+
+
+    // culoare butoane si border
+    $btn-border-radius: 10px,
+    $btn-link-color: #9F9685,
+    
+);
+
+*, *::before, *::after {
+    box-sizing:content-box;
+}
+
+iframe{
+    box-sizing: unset;
+  }
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
