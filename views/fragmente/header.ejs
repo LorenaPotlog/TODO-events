@@ -1,23 +1,30 @@
 <header>
     <h1>TODO <span>events</span></h1>
-    <!-- <picture>
-        <source srcset="./resurse/logo/peony-80.jpg" media="(max-width:700px)" />
-        <source srcset="./resurse/logo/peony-100.jpg" media="(max-width:1200px)" />
-        <img src="./resurse/logo/peony-150.jpg" alt="logo"fa-regular fa-solid fa-house />
-    </picture> -->
+
 </header>
 
 <nav>
+    
+    <!-- <div id="menu-wrapper">
     <label id="hamburger" for="ch-menu">
-        <i class="fa-solid fa-bars"></i>
-    </label>
-    <input id="ch-menu" type="checkbox">
-
+        <div class="hamburger-menu">
+        <div id="bar-1"></div>
+        <div id="bar-2"></div>
+        <div id="bar-3"></div>
+    </div>
+    </label> -->
+    <!-- <input id="ch-menu" type="checkbox"> -->
+    
+    <div id = "menu-container", style="width: 100%; height: fit-content;">
+        <label id="hamburger" for="ch-menu">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <input id="ch-menu" type="checkbox">
     <ul class="menu">
         <li>
             <div id="home">
                 <i class="fa-solid fa-regular fa-house"></i>
-                <a class = "menu-link" href="#home" class="home-1000">Home</a>
+                <a class = "menu-link-home" href="#home" class="home-1000">Home</a>
             </div>
 
             <ul>
@@ -51,13 +58,13 @@
             </ul>
         </li>
 
-        <li>
+        <li><div>
             <div><a href="/portfolio">Portfolio</a></div>
             <ul>
                 <li><a class = "menu-link" href="/photos-and-videos">Photos & Videos</a></li>
                 <li><a class = "menu-link" href="/testimonials">Testimonials</a></li>
             </ul>
-        </li>
+        </div></li>
 
         <li>
             <div>About us</div>
@@ -70,4 +77,6 @@
 
         <li><a class = "menu-link" href="/contact">Contact</a></li>
     </ul>
+</div>
+</div>
 </nav>
