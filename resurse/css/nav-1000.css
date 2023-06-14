@@ -8,9 +8,19 @@
         display: none;
     }
 
+    .menu > div {
+        width: 100%;
+    }
+
+    
+a.menu-link-home{
+    display: none;
+  }
+
     #home:hover {
-        .home-1000 {
+
+        .menu-link-home{
             display: inline;
-        }
+          }
     }
 }

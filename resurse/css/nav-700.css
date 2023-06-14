@@ -12,6 +12,7 @@
     --page-padding: 20px;
   }
     ul.menu{
+      position: absolute;
     display: none;
   }
 
@@ -34,26 +35,43 @@
     border-radius: 10px;
   }
 
+/*de modificat numarul de pagini sau gradientul!*/
 #ch-menu:checked + ul.menu{
-    display: block;
-    transform: scale(1, 1);
-    transform-origin: left;
-    transition: all 500ms linear;
-
+  display: block;
+  position: absolute;
+  -webkit-mask-image: linear-gradient(to bottom, black,black 50%, transparent);
+  mask-image: linear-gradient(to bottom, black,black 50%, transparent);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: clip-fade 1s forwards;
+    /* -webkit-mask-size:100% 200%;
+    mask-size:100% 200%; */
+    /* -webkit-mask-position: 0% 100%;
+    mask-position: 0% 100%; */
+  }
+  
+  @keyframes clip-fade {
+    0% {
+      -webkit-mask-position: 0% 100%;
+      mask-position: 0% 100%;
+    }
+    100% {
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
+    }
   }
 
 ul.menu li:hover > ul {
-    display: block;
     mask-position: top;
     transition: mask-position 0.5s;
-  -webkit-mask-image: linear-gradient(to top, black ,black);
-    mask-image: linear-gradient(to top, black, black);
+    mask-image: linear-gradient(180deg, black,black,black,black, transparent);
+    mask-size: 100% 200%;
   transition:all 0.5s linear;
-
   }
 
 ul.menu li:hover > ul li {
     transition: background-color 0.5s;
+
 
   }
 
@@ -61,6 +79,7 @@ ul.menu li:hover > ul li {
     position: relative;
     display: block;
     /* padding: 5px 0; */
+
   }
 
 }

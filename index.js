@@ -5,7 +5,7 @@ const sharp = require('sharp')
 const sass = require('sass')
 const ejs = require('ejs')
 const {Client} = require('pg')
-
+const { randomInt } = require("crypto");
 
 var client= new Client({database:"proiect_web",
     user:"lorena",
@@ -205,6 +205,39 @@ initImages();
 app.get("/favicon.ico",function(req,res){
     res.sendFile(path.join(__dirname, "resurse/ico/favicon.ico"))
 })
+
+//galerie animata
+app.get("/portfolio", function (req, res) {
+
+    // la fiecare request al paginii generam un nr random de imagini
+    let nrImagini = randomInt(6, 12);
+    if (nrImagini % 2 == 0) nrImagini++;
+
+    // vectorul cu imaginile de la sfarsit la inceput
+    let imgInv = [...obGlobal.obImages.images].reverse();
+
+    // citim fisierul scss si il impartim in linii
+    let fisScss = path.join(__dirname, "resurse/scss/animated-gallery.scss");
+    let liniiFisScss = fs.readFileSync(fisScss).toString().split("\n");
+
+    let stringImg = "$nrImg: " + nrImagini + ";";
+
+    // stergem prima linie ( cea cu nr vechi de imagini )
+    liniiFisScss.shift();
+
+    // scriem pe prima linie numarul nou de imagini
+    liniiFisScss.unshift(stringImg);
+
+    // scriem in fisierul scss
+    // se va compila automat din functia compileaza_scss cand se schimba
+    fs.writeFileSync(fisScss, liniiFisScss.join("\n"));
+
+    res.render("pagini/portfolio.ejs", {
+        imagini: obGlobal.obImages.images,
+        nrImagini: nrImagini,
+        imgInv: imgInv
+    });
+});
 
 //baza de date
 app.get("/events", function(req, res){

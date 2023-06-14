@@ -1,7 +1,7 @@
 @media screen and (min-width:701px) and (max-width: 1001px) {
     html {
         --page-padding: 15px;
-        font-size: 16px;
+        font-size: 12px;
         padding-left: var(--page-padding);
         padding-right: var(--page-padding);
 
@@ -19,8 +19,7 @@
     }
 
     #schedule {
-        overflow-x: scroll;
-        overflow-y: hidden;
+        overflow: hidden;
         white-space: nowrap;
         display: block;
     }

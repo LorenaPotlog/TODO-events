@@ -1,14 +1,22 @@
-<div id="animated-gallery" class="gallery">
+<div id="animated-gallery" class="gallery" style="--nrImg: <% locals.nrImagini %>">
     <div id="derulant">
-    <%for(let img of obGlobal.obImages.images) { %>
-        <figure >
-            <picture>
-                <source srcset="<%- img.image_path_medium %>" media="(max-width: 1000px)" />
-                <source srcset="<%- img.image_path_small %>" media="(max-width: 700px)" />
-                <img src="<%- img.image_path %>" width = "100%" alt="logo">
-            </picture>
-            <figcaption><%- img.title %></figcaption>
-        </figure>
-        <% } %>
+        <% var i=0; %>
+        <% for (let img of locals.imgInv) { %>
+            <% i=i + 1; %>
+                <% if(i> locals.nrImagini) { break; }%>
+
+                        <figure >
+                            <picture>
+                                <source srcset="<%- img.image_path_medium %>" media="(max-width: 1000px)" />
+                                <source srcset="<%- img.image_path_small %>" media="(max-width: 700px)" />
+                                <img src="<%- img.image_path %>" width = "100%" alt="logo">
+                            </picture>
+                            <figcaption><%- img.title %></figcaption>
+                        </figure>
+
+                            <% } %>
+                                <div id="spacer"></div>
+                            </div>
 </div>
-</div>
+
+    

@@ -1555,7 +1555,7 @@ textarea.form-control-lg {
 
 .form-range {
   width: 100%;
-  height: 1.5rem;
+  height: 2rem;
   padding: 0;
   background-color: transparent;
   appearance: none;
@@ -1564,19 +1564,19 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(255, 240, 245, 0.25);
+  box-shadow: 0 0 0 2px;
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(255, 240, 245, 0.25);
+  box-shadow: 0 0 0 2px;
 }
 .form-range::-moz-focus-outer {
   border: 0;
 }
 .form-range::-webkit-slider-thumb {
-  width: 1rem;
-  height: 1rem;
-  margin-top: -0.25rem;
-  background-color: #FFF0F5;
+  width: 1.5em;
+  height: 1.5rem;
+  margin-top: -0.5rem;
+  background-color: pink;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -1591,18 +1591,18 @@ textarea.form-control-lg {
   background-color: #fffbfc;
 }
 .form-range::-webkit-slider-runnable-track {
-  width: 100%;
+  width: 5em;
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #dee2e6;
+  background-color: purple;
   border-color: transparent;
   border-radius: 1rem;
 }
 .form-range::-moz-range-thumb {
-  width: 1rem;
-  height: 1rem;
-  background-color: #FFF0F5;
+  width: 1.5em;
+  height: 1.5rem;
+  background-color: pink;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -1617,11 +1617,11 @@ textarea.form-control-lg {
   background-color: #fffbfc;
 }
 .form-range::-moz-range-track {
-  width: 100%;
+  width: 5em;
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #dee2e6;
+  background-color: purple;
   border-color: transparent;
   border-radius: 1rem;
 }
@@ -2324,7 +2324,7 @@ textarea.form-control-lg {
 
 .btn-link {
   --bs-btn-font-weight: 400;
-  --bs-btn-color: #9F9685;
+  --bs-btn-color: black;
   --bs-btn-bg: transparent;
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: var(--bs-link-hover-color);
@@ -6309,8 +6309,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.btn-primary {
+  --bs-btn-color: grey;
+}
+
+.btn-primary {
+  --bs-btn-color: 9F9685;
+}
+
 *, *::before, *::after {
   box-sizing: content-box;
+}
+
+:root {
+  --bs-link-color:#967869;
 }
 
 iframe {

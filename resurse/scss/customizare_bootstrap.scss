@@ -19,6 +19,15 @@
     $h1-font-size: 2.4 rem,
     $h2-font-size: 2 rem,
 
+      // slider
+      $form-range-thumb-width: 1.5em,
+      $form-range-thumb-height: 1.5rem,
+      $form-range-track-bg: purple,
+      $form-range-thumb-bg: pink,
+      $form-range-track-width: 5em,
+      $form-range-thumb-focus-box-shadow:        0 0 0 2px,
+    
+
 
     // familia de font implicită
     $font-family-sans-serif: "Raleway",
@@ -36,14 +45,24 @@
 
     // culoare butoane si border
     $btn-border-radius: 10px,
-    $btn-link-color: #9F9685,
+    $btn-link-color: black,
     
 );
 
+.btn-primary {
+  --bs-btn-color: grey;
+}
+
+.btn-primary {
+  --bs-btn-color: 9F9685;
+}
 *, *::before, *::after {
     box-sizing:content-box;
 }
 
+:root {
+--bs-link-color:#967869;
+}
 iframe{
     box-sizing: unset;
   }
