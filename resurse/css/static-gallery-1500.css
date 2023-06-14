@@ -75,9 +75,18 @@
     transition: background-color 1.25s, color 1.25s;
 }
 
+.author{
+  display: none;
+  font-style: italic;
+  font-weight: bolder;
+}
+
 #gallery-grid figure:hover figcaption {
   background-color: var(--bg-color-light);
   color: black;
+  .author{
+    display: block;
+  }
 }
 /*team gallery-grid*/
 
@@ -117,6 +126,7 @@
 #team-grid figcaption{
 display: none;
 }
+
 
 
 

@@ -2,24 +2,36 @@
 <html lang="en">
 <head>
     <%- include("../fragmente/head.ejs") %>
+    <script type="text/javascript" src="/resurse/js/events.js"></script>
+    <!-- <script type="text/javascript" src="/resurse/js/new-events.js"></script> -->
+
 </head>
 <body>
     <%- include("../fragmente/header.ejs") %>
-    <main>
 
+    <script type="text/javascript" src="/resurse/js/new-events.js"></script>
+    
+    <main>
+        <div class="div-filtre">
+        <h3>Filter events by:</h3>
         <!-- input de tip text -->
-        <label> Name of event: <input type="text" id="inp-denumire"></label>
+        
+        <div class="row">
+        <div class="col-md-3">
+        <label> Name of event: <input type="text" id="inp-denumire"placeholder="Wedding... "></label>
+        </div>
 
          <!-- input de tip range. -->
-         <div id="price-range" class="">
-            <label class="form-label"> Min.Total Price (incl. services and organization) </label>
-            <span id="minRange">(300)</span>
-            <span id=""><input type="range" id="inp-pret" class="form-range" type="range" value="30" min="300" step="100" max="4000"
+         <div id="price-range" class="col-md-6">
+            <label class="form-label" for="inp-pret"> Min.Total Price (incl. services and organization) </label>
+            <span id="minRange">(300.00)</span>
+            <span id=""><input type="range" id="inp-pret" class="form-range" type="range" value="300" min="300" step="100" max="4000"
                     style="display: inline-block;"></span>
                      <span id="maxRange">(4000)</span>
                     <span id="val_select">(300)</span>
         </div>
 
+</div>
         <!-- datalist -->
         <div class="row">
             <div class="col-md-3">
@@ -35,7 +47,7 @@
             </div>
 
         <!-- grup de inputuri de tip radio -->
-        <div> Organization costs (excl. services):<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+        <div class="col-md-3" > Organization costs (excl. services):<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
             <p><label>Limited ( Price &lt; 100)
                 <input id="radio-1"  name="org-cost" value="0:100" type="radio"/>
             </label></p>
@@ -52,9 +64,10 @@
                 <input id="radio-all" checked name="org-cost" value="all" type="radio"/>
             </label></p>
         </div>
-
+    </div>
 
             <!-- input de tip checkbox sau grup de inputuri de tip checkbox -->
+            <div class="row">
             <div id="event-sizes" class="col-md-3">
                 <fieldset>
                     <legend>Event size:</legend>
@@ -87,9 +100,10 @@
                             name="ev_size" value="All" >
                         <label class="form-check-label" for="flexSwitchCheckDefault">Any size</label>
                     </div>
+                </div>
         
             <!-- select simplu -->
-            <p>
+            <div class="col-md-3">
              <label> Type of event:
             <select id="inp-categorie">
                 <option id="all" selected value="all">Show all</option>
@@ -105,11 +119,14 @@
               <% }); %>
             </select> 
         </label>
-    </p>
+        </div>
+    </div>
+
 
     <!-- select multiplu -->
-    <div id="services-container" class="">
-        <label>Included services::
+    <div class="row">
+    <div id="services-container" class="col-md-3">
+        <label>Included services:</select>
             <select id="inp-services" multiple size="7">
                 <option value="All" selected id="">All</option>
                 <option value="f&b">Food & Beverages</option>
@@ -118,24 +135,22 @@
                 <option value="video">Video</option>
                 <option value="photo">Photo</option>
                 <option value="candy-bar">Candy bar</option>
-            </select>
-        </label>
+    </div>
+    <!-- textarea - de folosit pt comentarii etc -->
+        <div class="form-floating col-md-3" id="descriere-container">
+            <textarea class="form-control" placeholder="What are you looking for?" id="inp-descriere"
+                name="descriere" rows="4" cols="25"></textarea>
+            <label for="inp-descriere">Search in event description:</label>
     </div>
 
-    <!-- textarea - de folosit pt comentarii etc -->
-    <div class="row">
-        <div class="form-floating col-md-3" id="descriere-container">
-            <p>Search in event description:</p>
-            <textarea class="form-control" placeholder="What are you looking for?" id="inp-description"
-                name="descriere" rows="4" cols="25"></textarea>
-            <label for="inp-descriere"></label>
-        </div>
+</div>
+
 
     <!-- pentru carcateristica booleană se vor face doua butoane de tip radio -->
     
     <div class="row">
         <div id="vouchers-container" class="col-md-6">
-            <p>Accepting payment with vouchers:</p><!-- tdebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p>Accepting payment with vouchers:</p>
             <p><label>Yes
                     <input id="voucher-radio-1" name="v_rad" value="true" type="radio" />
                 </label></p>
@@ -148,36 +163,66 @@
         </div>
     </div>
 
-        <p>
+    <div class="row">
+        <button id="filter" class="btn btn-primary col-lg-2"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-funnel" viewBox="0 0 16 16">
+            <path
+                d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z" />
+        </svg><i class="btn-ascuns">Filter</i></button> 
         
-        <button id="filter">Filter</button> 
-        <button id="reset">Reset</button><br/>
-        <button id="sortCresc">Ascending order after organization price and event size</button>
-        <button id="sortDescresc">Descending order after organization price and event size</button>
         
-        </p>
+        <button id="reset" class="btn btn-danger col-lg-2"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg><i class="btn-ascuns">Reset</i></button><br />
+        
+        <button id="sortCresc" class="btn btn-secondary col-lg-2"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-sort-alpha-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371h-1.781zm1.57-.785L11 2.687h-.047l-.652 2.157h1.351z" />
+            <path
+                d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
+        </svg><i class="btn-ascuns">Ascending order after organization price and event size</i></button>
+        
+        <button id="sortDescresc"  class="btn btn-secondary col-lg-2"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-sort-alpha-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371h-1.781zm1.57-.785L11 2.687h-.047l-.652 2.157h1.351z" />
+            <path
+                d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zm-8.46-.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
+        </svg><i class="btn-ascuns">Descending order after organization price and event size</i></button>
+    
+        </div>
         
         <p id="sum-total">Press Alt+"c" to find out the total organization price of the shown events. </p>
         
         <section id="events">
-            <h2>Events</h2>
-            <div class="grid-events">
+            <div class="events-grid"> 
                 <% for( let event of locals.events) { %>
-                    <article class="event" id="elem_<%-event.id%>>" >
-                        <h3 class="denumire">Caption: <a href="/event/<%- event.id%>" >
-                            <span class="val-denumire"><%- event.denumire%></span></a></h3>
+                    <article class="event <%- event.categorie %>" id="elem_<%- event.id %>">
+                        <h3 class="denumire">Caption: <a href="/event/<%- event.id %>" >
+                            <span class="val_denumire"><%- event.denumire%></span></a></h3>
                         
+                        <div class="info-events">
                         <div class="event-flex">
-                        <div class="info-event-table">
+                        <div class="table-container">
+                            
                             <table>
-                            <tr>
-                                <td>Organization price (excl. services):</td>
-                                <td class="val_pret_org"><%- event.cost_organizare %></td>
-                            </tr>
 
                             <tr>
                                 <td>Total price:</td>
-                                <td class="val_pret_total"><%- event.cost_total%></td>
+                                <td class="val_pret_total"><%- event.cost_total %></td>
+                            </tr>
+
+                            <tr>
+                                <td>Organization price (excl. services):</td>
+                                <td class="val_pret_org"><%- event.cost_organizare %></td>
                             </tr>
 
                             <tr>
@@ -187,47 +232,76 @@
 
                             <tr>
                                 <td>Included services:</td>
-                                <td class="val_servicii"><%- event.servicii_incluse %></td>
+                                <td><span class="val_servicii">
+                                    <% if (event.servicii_incluse.includes('f&b')) { %>
+                                        Food & Beverages
+                                    <% } if (event.servicii_incluse.includes('music')) { %>
+                                        Music
+                                        <% } if (event.servicii_incluse.includes('candy-bar')) { %>
+                                            Candy Bar
+                                            <% } if (event.servicii_incluse.includes('video')) { %>
+                                                Video services
+                                                <% } if (event.servicii_incluse.includes('bar')) { %>
+                                                    Cocktail bar
+                                                    <% } if (event.servicii_incluse.includes('photo')) { %>
+                                                        Photograph
+                                    <% } %>
+</span></td>
                             </tr>
-                    
+
+                            <tr>
+                                <td>Next available date:</td>
+                                <td><time datetime="YYYY-MM-DD" class="data_disponibila"><%- event.data_disponibila
+                                    %> </time></td>
+                            </tr>
+
+                            <tr>
+                                <td>Can you pay with vouchers:</td>
+                                <td><span class="val_vouchere">
+                                    <% if (event.plata_vouchere) { %>
+                                      Yes!
+                                    <% } else { %>
+                                      No.
+                                    <% } %>
+                                  </span></td>
+                            </tr>
+
                     
                         <tr >
                             <td>Menu:</td>
                             <td class="val_meniu"><%- event.meniu %></td>
                         </tr>
+
                         <tr class="hidden">
                             <td class="val_anotimp"><%- event.anotimp %></td>
                         </tr>
+
                         <tr class="hidden">
                             <td class="event-id"><%- event.id %></td>
                         </tr>
-                        <!-- <tr class="hidden">
-                            <td class="val-servicii"><%- event.servicii_incluse %></td>
-                        </tr> -->
+
+
+                        
                     </table>
                     
-                        <p>Description: <span class="val_descriere"><%- event.descriere %> </span></p>
-                        <p class="categorie">Category: <span class="val_categorie"><%- event.categorie%></span></p>
                         </div>
+                        
                         <div class="imag-container">
                         <figure>
-                            <a href="/event/<%- event.id %>" ><img src="/resurse/images/events/<%- event.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- event.denumire %>]" /></a>
+                            <a href="/event/<%- event.id %>" ><img src="/resurse/images/events/<%- event.imagine %>" style="width:100%;height:auto; border-bottom-left-radius:30px;" alt="[imagine <%- event.denumire %>]" /></a>
                         </figure>
                     </div>
-
+                </div>
                         <!-- de formatat data -->
-                        <p>Next available date: <time datetime="YYYY-MM-DD" class="data_disponibila"><%- event.data_disponibila
-                            %> </time> </p>
-                        <p>Can you pay with vouchers: <span class="val_vouchere">
-                            <% if (event.plata_vouchere) { %>
-                              Yes!
-                            <% } else { %>
-                              No.
-                            <% } %>
-                          </span></p>
-                        </div>
+                    
+                        </div>                        
+                        <!-- <div class="description-container"> -->
+                        <p class="descriere">Description: <span class="val_descriere"><%- event.descriere %></span></p>
+                        <p class="categorie">Category: <span class="val_categorie"><%- event.categorie%></span></p>
                         </article>
+
                 <% }%>
+            
             </div>
         </section>
     </main>
