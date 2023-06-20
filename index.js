@@ -7,7 +7,6 @@ const ejs = require('ejs')
 const {Client} = require('pg')
 const { randomInt } = require("crypto");
 
-
 const AccesBD = require('./resurse/js/module_proprii/accesbd.js');
 const { Utilizator } = require("./resurse/js/module_proprii/utilizator.js");
 const session = require('express-session');
