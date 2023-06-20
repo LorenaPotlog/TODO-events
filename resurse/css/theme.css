@@ -1,0 +1,49 @@
+
+
+
+body.dark{
+    --background-color: #808080;
+    --menu-links: black;
+    --menu-color: #CD853F;
+    --text-color: #6495ED ;
+    --footer-color: #FF6347 ;
+
+    
+    background-color: var( --background-color);
+    color: var(--text-color);
+    
+    ul.menu > li {
+        background-color: var(--menu-color);
+    }
+
+    ul.menu li a{
+        color: var(--menu-links);
+    }
+
+    footer{
+        background-color: var(--footer-color);
+    }
+   
+}
+
+body.girly{
+    --background-color: #4169E1;
+    --menu-links: #FFDAB9;
+    --text-color: #663399 ;
+    --menu-color: #DDA0DD;
+    --footer-color: #DB7093 ;
+    
+    background-color: var( --background-color);
+    color: var(--text-color);
+    ul.menu > li {
+        background-color: var(--menu-color);
+    }
+
+    ul.menu li a{
+        color: var(--menu-links);
+    }
+
+    footer{
+        background-color: var(--footer-color);
+    }
+}

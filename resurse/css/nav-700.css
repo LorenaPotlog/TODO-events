@@ -40,15 +40,28 @@
 #ch-menu:checked + ul.menu{
   display: block;
   position: absolute;
+<<<<<<< HEAD
   -webkit-mask-image: linear-gradient(to bottom, black, transparent);
   mask-image: linear-gradient(to bottom, black);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     animation: clip-fade 1s forwards;
+=======
+  -webkit-mask-image: linear-gradient(to bottom, black,black 50%, transparent);
+  mask-image: linear-gradient(to bottom, black,black 50%, transparent);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: clip-fade 1s forwards;
+    /* -webkit-mask-size:100% 200%;
+    mask-size:100% 200%; */
+    /* -webkit-mask-position: 0% 100%;
+    mask-position: 0% 100%; */
+>>>>>>> cfacc0e8a367ed554dcbc47bc695a321f0c456cb
   }
   
   @keyframes clip-fade {
     0% {
+<<<<<<< HEAD
       -webkit-mask-size: 100% 0%;
       mask-size: 100% 0%;
     }
@@ -59,6 +72,14 @@
     100% {
       -webkit-mask-size: 100% 200%;
       mask-size: 100% 200%;
+=======
+      -webkit-mask-position: 0% 100%;
+      mask-position: 0% 100%;
+    }
+    100% {
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
+>>>>>>> cfacc0e8a367ed554dcbc47bc695a321f0c456cb
     }
   }
 
