@@ -4,7 +4,7 @@
 <head>
     <%- include("../fragmente/head.ejs")%>
 </head>
-<body>
+<body class="fixed-background">
     <%- include("../fragmente/header.ejs")%>
     <main>
         <h2>Photos & Videos</h2>
@@ -32,5 +32,15 @@
     </main>
     <%- include("../fragmente/footer.ejs")%>
 </body>
+<script>
+    var images = ['fixed-background-1.jpg', 'fixed-background-2.jpg', 'fixed-background-3.jpg'];
+    var currentIndex = 0;
 
+    function changeFixedBackground() {
+      var element = document.querySelector('.fixed-background');
+      element.style.backgroundImage = 'url(/resurse/images/' + images[currentIndex] + ')';
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+    setInterval(changeFixedBackground, 3000);
+</script>
 </html>

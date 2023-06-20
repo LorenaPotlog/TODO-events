@@ -4,7 +4,6 @@
 <head>
 
     <%- include("../fragmente/head.ejs")%>
-
 </head>
 
 <body>
@@ -17,6 +16,25 @@
                 <h2>Welcome!</h2>
                 <p> <%- 'Your IP address is: ' + locals.ip %> </p>
                 <p>
+                    <% if(!locals.utilizator) { %>
+                        <form id="form_inreg" method="post" class="date" action="/login" enctype="multipart/form-data">
+                          <p>
+                            <label>
+                              Username: <input type="text" name="username" id="inp-username" value="" required>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              Parola: <input id="parl" type="password" required name="parola" value="">
+                            </label>
+                          </p>
+                          <p><input type="submit" value="Logare"></p>
+                        </form>
+                        <p><%- locals.mesajLogin %></p>
+                        <% } else {%>
+                        <%- locals.succesLogin %>
+                        <% }  %>
+
                     <%- locals.ip %>
                     Who We Are
                     Blossom Weddings is an award-winning destination wedding planning service that prides itself in
@@ -239,7 +257,8 @@
                     pellentesque. Fusce tempus arcu turpis, nec mollis nunc pretium at. Nulla facilisi. Integer varius
                     risus quam, sit amet malesuada purus vestibulum ac. Duis dictum in magna egestas euismod. Phasellus
                     ex diam, vestibulum tincidunt tincidunt id, egestas sit amet felis.</p>
-            </section>
+            
+                </section>
             <section id="server">
                 <h2>Server</h2>
 
@@ -280,9 +299,8 @@
             </section>
         </div>
     </main>
-
+    
     <%- include("../fragmente/footer.ejs")%>
-
 </body>
 
 </html>

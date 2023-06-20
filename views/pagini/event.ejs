@@ -16,11 +16,31 @@
                 <p>Description: <span class="descriere"><%- locals.event.descriere %> </span></p>
                 <p>Organization price (excl. services): <span class="cost_organizare"><%- locals.event.cost_organizare %> </span></p>
                 <p>Total price (incl. organization and services): <span class="cost_total"><%- locals.event.cost_total %> </span></p>
-                <p>Included services: <span class="servicii_incluse"><%- locals.event.servicii_incluse %> </span></p>
+                <p>Included services: <span class="val_servicii">
+                  <% if (event.servicii_incluse.includes('f&b')) { %>
+                      Food & Beverages
+                  <% } if (event.servicii_incluse.includes('music')) { %>
+                      Music
+                      <% } if (event.servicii_incluse.includes('candy-bar')) { %>
+                          Candy Bar
+                          <% } if (event.servicii_incluse.includes('video')) { %>
+                              Video services
+                              <% } if (event.servicii_incluse.includes('bar')) { %>
+                                  Cocktail Bar
+                                  <% } if (event.servicii_incluse.includes('photo')) { %>
+                                      Photograph
+                  <% } %>
+</span></p>
                 <p>Type of menu: <span class="meniu"><%- locals.meniu %> </span></p>
                 <p>Event size: <span class="marime"><%- locals.event.marime %> </span></p>
-                <p>Can you pay with vouchers: <span class="plata_vouchere"><%- locals.event.plata_vouchere %> </span></p>
-    
+                <p>Can you pay with vouchers: <span class="val_vouchere">
+                    <% if (event.plata_vouchere) { %>
+                      Yes!
+                    <% } else { %>
+                      No.
+                    <% } %>
+                  </span></p>
+
             </article>
         
     </section>
