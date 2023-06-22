@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", function () {
   //Etapa 7 - bootstrap_js, card in bootstrap
   const cards = document.getElementsByClassName("event");
 
-  debugger
 
   // Delay between each card (in milliseconds)
   const delayBetweenCards = 250;
@@ -16,7 +15,6 @@ window.addEventListener("DOMContentLoaded", function () {
       }, delayBetweenCards * index);
   }
 
-  debugger
 
   // Loop through each card and set animation delay
   for (let i = 0; i < cards.length; i++) {
@@ -129,7 +127,6 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    debugger
     let inputElement = document.getElementById("inp-descriere");
     let val_descriere = inputElement ? inputElement.value : "";
     var events = document.getElementsByClassName("event");
@@ -173,7 +170,6 @@ window.addEventListener("DOMContentLoaded", function () {
       let cond_servicii = val_servicii.every(function(el) { return servicii.includes(el); }) || val_servicii.includes("All");
       let cond_descriere = (descriere.includes(val_descriere));
       let cond_vouchere = (val_vouchere === "all" || (val_vouchere === 'true' && vouchere === 'Yes') ||  (val_vouchere == 'false' && vouchere === 'No'));
-      debugger
 
       //cond_descriere 
       let shown_events = 0;
@@ -232,11 +228,10 @@ window.addEventListener("DOMContentLoaded", function () {
       resetSort();
       
       var events = document.getElementsByClassName("event");
-      debugger
+
       for (let event of events) {
           event.style.display="block";
       }
-      debugger
     }
   }
 

@@ -1,8 +1,8 @@
 body.dark{
-    --background-color: #808080;
-    --menu-links: black;
-    --menu-color: #CD853F;
-    --text-color: #6495ED ;
+    --background-color: rgb(156, 177, 216);
+    --menu-links: #FF6347;
+    --menu-color: rgba(111, 111, 219, 0.904);
+    --text-color: purple ;
     --footer-color: #FF6347 ;
 
     

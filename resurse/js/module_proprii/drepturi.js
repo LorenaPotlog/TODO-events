@@ -19,7 +19,7 @@
  */
 
 const Drepturi = {
-    vizualizareUtilizatori: Symbol("vizualizareUtilizatori"), //folosim symbol sa ne asiguram ca folosim exact ce am declarat aici, nu alt string care sa fie echivalent cu acesta
+    vizualizareUtilizatori: Symbol("vizualizareUtilizatori"), //folosim symbol (o instanta unica a sirului ex: abc == abc) sa ne asiguram ca folosim exact ce am declarat aici, nu alt string care sa fie echivalent cu acesta
     stergereUtilizatori: Symbol("stergereUtilizatori"),
     cumparareProduse: Symbol("cumparareProduse"),
     vizualizareProduse: Symbol("vizualizareProduse"),

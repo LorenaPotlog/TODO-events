@@ -19,15 +19,15 @@ const request = require("request");
 // const puppeteer=require('puppeteer');
 // const mongodb=require('mongodb');
 
-AccesBD.getInstanta().select({
-        tabel: "evenimente",
-        campuri: ["denumire", "cost_organizare", "marime"],
-        conditiiAnd: ["cost_organizare>150"]
-    }, function (err, rez) {
-        console.log(err);
-        console.log(rez);
-    }
-)
+// AccesBD.getInstanta().select({
+//         tabel: "evenimente",
+//         campuri: ["denumire", "cost_organizare", "marime"],
+//         conditii: [["cost_organizare>150", "cost_total<2000"],["cost_organizare>100"]]
+//     }, function (err, rez) {
+//         console.log(err);
+//         console.log(rez);
+//     }
+// )
 
 AccesBD.getInstanta()
 
@@ -136,6 +136,7 @@ app.use("/node_modules",express.static(path.join(__dirname,"node_modules"))) //a
 app.get(["/index", "/", "/home"], function(req, res){
     res.render("pagini/index", {ip:req.ip, images: obGlobal.obImages.images});
 });
+
 
 //pentru erori 
 
@@ -328,13 +329,15 @@ app.get("/events", function(req, res){
     })
 })
 
+//carousel
 app.get("/event/:id", function(req, res){
     console.log(req.params)
     client.query(`select * from evenimente where id=${req.params.id}`, function(err, rez){
         if(err){
             displayError(res,404)
         }
-        res.render("pagini/event", {event: rez.rows[0]})
+        const imageFiles = fs.readdirSync(__dirname + "/resurse/images/events").filter(image => image.toLowerCase().includes(rez.rows[0].categorie.toLowerCase()));
+        res.render("pagini/event", {event: rez.rows[0], images: imageFiles}) //toate pozele din categoria respectiva afisata la fiecare event din acea categorie
     })
 })
 
@@ -357,13 +360,13 @@ app.post("/inregistrare",function(req, res){
     var username;
     console.log("ceva");
     var formular= new formidable.IncomingForm();
-    formular.parse(req, function(err, campuriText, campuriFisier ){//4
+    formular.parse(req, function(err, campuriText, campuriFisier ){ //se apeleaza dupa ce a primit tot din field + fisiere
         console.log("Inregistrare:",campuriText);
 
         console.log(campuriFisier);
         var eroare="";
 
-        var utilizNou=new Utilizator();
+        var utilizNou=new Utilizator(); //cream utilizatorul cu valorile din inputuri
         try{
             utilizNou.setareNume=campuriText.nume;
             //utilizNou.setareUsername=campuriText.username;
@@ -374,7 +377,7 @@ app.post("/inregistrare",function(req, res){
             utilizNou.parola=campuriText.parola;
             utilizNou.culoare_chat=campuriText.culoare_chat;
             utilizNou.poza= campuriFisier.poza.originalFilename;
-            Utilizator.getUtilizDupaUsername(campuriText.username, {}, function(u, parametru ,eroareUser ){
+            Utilizator.getUtilizDupaUsername(campuriText.username, {}, function(u, parametru ,eroareUser ){ //verificam ca nu exista utilizatorul
                 if (eroareUser==-1){//nu exista username-ul in BD
                     utilizNou.salvareUtilizator();
                 }
@@ -421,7 +424,7 @@ app.post("/inregistrare",function(req, res){
         if (!fs.existsSync(folderUser))
             fs.mkdirSync(folderUser);
         // fisier.filepath=path.join(folderUser, fisier.originalFilename)
-        fisier.filepath=folderUser+"/"+fisier.originalFilename
+        fisier.filepath=folderUser+"/"+fisier.originalFilename //se incarca la path ul pus aici
 
     })    
     formular.on("file", function(nume,fisier){//3
@@ -435,7 +438,7 @@ app.post("/login",function(req, res){
     var username;
     console.log("ceva");
     var formular= new formidable.IncomingForm()
-    formular.parse(req, function(err, campuriText, campuriFisier ){
+    formular.parse(req, function(err, campuriText, campuriFisier ){ //o sa intre dupa ce a primit tot.
         Utilizator.getUtilizDupaUsername (campuriText.username,{
             req:req,
             res:res,

@@ -1,3 +1,4 @@
+//verificare pentru parola - returneaza un boolean. true cand vrem sa trimitem datele din formular
 window.onload = function () {
     var formular = document.getElementById("form_inreg");
     if (formular) {

@@ -8,34 +8,31 @@ const {Client, Pool} = require("pg");
 
 
 class AccesBD {
-    static #instanta = null;
-    static #initializat = false;
+    static #instanta = null; //o singura conexiune
+    static #initializat = false; //static - nu tine de obiect, tine de clasa
 
-    constructor() {
+    constructor() { //initializarea unei clase, Singleton - o singura instanta a acelei clase
         if (AccesBD.#instanta) {
             throw new Error("Deja a fost instantiat");
         } else if (!AccesBD.#initializat) {
             throw new Error("Trebuie apelat doar din getInstanta; fara sa fi aruncat vreo eroare");
+            //nu am facut initializarile inca si nu pot crea instanta
         }
     }
-
+    
+    /*Conexiunea catre baza de date*/
     initLocal() {
-        this.client = new Client({
+        this.client = new Client({ //this ma refer la instanta curenta
             database: "proiect_web",
             user: "lorena",
             password: "lorena",
             host: "localhost",
             port: 5432
         });
-        // this.client2 = new Pool({
-        //     database: "laborator",
-        //     user: "irina",
-        //     password: "irina",
-        //     host: "localhost",
-        //     port: 5432
-        // });
         this.client.connect();
     }
+
+    /**/
 
     getClient() {
         if (!AccesBD.#instanta) {
@@ -57,9 +54,9 @@ class AccesBD {
      * @returns {AccesBD}
      */
     static getInstanta({init = "local"} = {}) { //init:site
-        console.log(this);//this-ul e clasa nu instanta pt ca metoda statica
+        console.log(this);//this-ul e clasa! nu instanta pt ca metoda statica
         if (!this.#instanta) {
-            this.#initializat = true;
+            this.#initializat = true; //daca exista instanta o returneaza, altfel creaza alta noua. #instanta incepe fiind setat false
             this.#instanta = new AccesBD();
 
             //initializarea poate arunca erori
@@ -68,7 +65,7 @@ class AccesBD {
             try {
                 switch (init) {
                     case "local":
-                        this.#instanta.initLocal();
+                        this.#instanta.initLocal(); //creez conexiunea la baza de date
                 }
 
 
@@ -87,9 +84,10 @@ class AccesBD {
      * @typedef {object} ObiectQuerySelect - obiect primit de functiile care realizeaza un query
      * @property {string} tabel - numele tabelului
      * @property {string []} campuri - o lista de stringuri cu numele coloanelor afectate de query; poate cuprinde si elementul "*"
-     * @property {string[]} conditiiAnd - lista de stringuri cu conditii pentru where
+     * @property {string[]} conditii - lista de stringuri cu conditii pentru where
      */
 
+    /*Adăugați în funcțiile select, update și delete, posibilitatea de a avea operatorul logic "or" între condiții.*/
 
     /**
      * callback pentru queryuri.
@@ -103,32 +101,37 @@ class AccesBD {
      * @param {ObiectQuerySelect} obj - un obiect cu datele pentru query
      * @param {function} callback - o functie callback cu 2 parametri: eroare si rezultatul queryului
      */
-    select({tabel = "", campuri = [], conditiiAnd = []} = {}, callback, parametriQuery = []) {
+    select({tabel = "", campuri = [], conditii = [[]]} = {}, callback, parametriQuery = []){ //selecteaza tabelul si campurile=coloanele
         let conditieWhere = "";
-        if (conditiiAnd.length > 0)
-            conditieWhere = `where ${conditiiAnd.join(" and ")}`;
-        let comanda = `select ${campuri.join(",")} from ${tabel} ${conditieWhere}`;
-        console.error(comanda);
-        /*
-        comanda=`select id, camp1, camp2 from tabel where camp1=$1 and camp2=$2;
-        this.client.query(comanda,[val1, val2],callback)
+        if(conditii.length > 0 && conditii[0].length > 0){
+            for(let i = 0; i < conditii.length; i++){
+                conditii[i] = "(" + conditii[i].join(" and ") + ")";
+            }
+            conditieWhere = `where ${conditii.join(" or ")}`;
+        }
 
-        */
-        this.client.query(comanda, parametriQuery, callback)
+        let comanda = `select ${campuri.join(",")} from ${tabel} ${conditieWhere}`; //adauga $ in fata fiecarui camp si face o inlocuire a caracterelor speciale
+        console.log(comanda);
+        //comanda="select id, camp1, camp2, from tabel (where camp1=$1 si camp2=$2") = conditii where
+        this.client.query(comanda, parametriQuery, callback); //apoi introduce si un query de tipul [val1, val2]-parametri Query si apoi callback-ul pt query
     }
 
-    async selectAsync({tabel = "", campuri = [], conditiiAnd = []} = {}) {
+
+  async selectAsync({tabel = "", campuri = [], conditii = [[]]} = {}){
         let conditieWhere = "";
-        if (conditiiAnd.length > 0)
-            conditieWhere = `where ${conditiiAnd.join(" and ")}`;
+        if(conditii.length > 0 && conditii[0].length > 0){
+            for(let i = 0; i < conditii.length; i++){
+                conditii[i] = "(" + conditii[i].join(" and ") + ")";
+            }
+            conditieWhere = `where ${conditii.join(" or ")}`;
+        }
 
         let comanda = `select ${campuri.join(",")} from ${tabel} ${conditieWhere}`;
-        console.error("selectAsync:", comanda);
-        try {
+        console.error(comanda);
+        try{
             let rez = await this.client.query(comanda);
-            console.log("selectasync: ", rez);
             return rez;
-        } catch (e) {
+        } catch (e){
             console.log(e);
             return null;
         }
@@ -138,7 +141,7 @@ class AccesBD {
         console.log("-------------------------------------------")
         console.log(Object.keys(campuri).join(","));
         console.log(Object.values(campuri).join(","));
-        let comanda = `insert into ${tabel}(${Object.keys(campuri).join(",")}) values ( ${Object.values(campuri).map((x) => `'${x}'`).join(",")})`;
+        let comanda = `insert into ${tabel}(${Object.keys(campuri).join(",")}) values ( ${Object.values(campuri).map((x) => `'${x}'`).join(",")})`; //toate valorile si pun apostrof in stg si dreapta.
         console.log(comanda);
         this.client.query(comanda, callback)
     }
