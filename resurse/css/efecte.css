@@ -1,0 +1,278 @@
+
+/*background cu video*/
+#office-container video{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 50%;
+}
+
+/*efect-css-reflexie-text*/
+#text-reflectat{
+	transform-origin:0 0;
+	/*conetaza ordinea transformarilor!*/
+	transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px,-25px); 
+	opacity:0.55;
+    filter:blur(2px);
+    transition: all 0.3s ease;
+}
+
+#text-reflectat:hover {
+    transform: rotateX(180deg) skew(-45deg) scaleY(1) translate(10px, -40px); 
+  }
+
+
+#text{	
+	position:relative;
+}
+
+#text, #text-reflectat{
+	font-size:3vw;
+	font-weight: bold;
+}
+
+
+/* text care se plimba orizontal sau vertical - This is a school project - trebuie optimizat, fara scrollbar*/
+#copyright {
+    white-space: nowrap;
+    width: 100%;
+    animation: scroll-horizontal 5s linear infinite;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-80%);
+      overflow: hidden;
+
+    }
+    
+} 
+ 
+#scroll {
+    overflow: hidden;
+}
+
+/*folosind pseduo-clasa ::selection*/
+
+#portfolio-details  p::selection{
+    color:black;
+    background-color: pink;
+ }
+
+ /*folosind pseduo-clasa ::selection*/
+
+#office-container-details p::selection{
+    color:black;
+    background-color: pink;
+ }
+
+/*efect-css-stilizare-hr - Stilizare hr*/
+
+ 
+hr {
+    height: 10px;
+    border-radius: 20px;
+    background-image: linear-gradient(white 5%, black, 50%, transparent 10%),
+    linear-gradient(white 5%, black, 50%, transparent 10%),
+    linear-gradient(white 5%, black, 50%, transparent 10%);
+    background-size: 5px 2px;
+
+}
+
+hr::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;    
+    height: 20px;
+    background-image: linear-gradient(white 20%, black 35%, transparent 30%);
+    background-size: 10px 10px;
+    background-repeat: repeat-x;
+}
+
+hr::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background-image: linear-gradient(white 20%, black 35%, transparent 30%);
+    background-size: 10px 10px;
+    background-repeat: repeat-x;
+
+}
+
+/*efect duotone*/
+
+.duotone {
+    position: relative;
+    width: 100%; 
+    height: 900px;
+    background-image: url("/resurse/images/partners.png");
+    filter: grayscale(0%);
+    transition: filter 0.5s ease-in;
+}
+
+.duotone::before,
+.duotone::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+   
+.duotone::before {
+    background-color: hsl(280, 80%, 50%);
+    mix-blend-mode: lighten;
+}
+  
+.duotone::after {
+    background-color: rgba(220, 80%, 50%);
+    mix-blend-mode: darken;
+}
+  
+.duotone:hover {
+    filter: grayscale(100%);
+}
+
+/*background imagine fixa*/
+
+.fixed-background {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/resurse/images/fixed-background-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*tabel responsive*/
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.servicii-foto-table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 3px solid #f1d5d5;
+}
+
+.servicii-foto-table-row {
+    display: table-row;
+}
+
+.servicii-foto-table-cell {
+    border: 3px solid #f1d5d5;
+}
+
+.transpose-table {
+    border-collapse: collapse;
+    border: 3px solid #f1d5d5;
+    margin-bottom: 3%;
+}
+
+.transpose-table td {
+    border: 3px solid #f1d5d5;
+}
+
+@media screen and (max-width: 700px) {
+
+    .servicii-foto-table, .servicii-foto-table-row, .servicii-foto-table-cell {
+        display: block;
+    }
+
+    .servicii-foto-table > thead > tr {
+        display: none;
+    }
+
+    .servicii-foto-table {
+        width: 64%;
+    }
+
+    .servicii-foto-table-cell {
+        border: 1px solid #f1d5d5;
+    }
+
+    .servicii-foto-table-cell {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align:left;
+        min-height: 30px;
+        overflow: hidden;
+        word-break:break-all;
+    }
+
+    .servicii-foto-table-row {
+        border-bottom: 1px solid #f1d5d5;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        width: 200%;
+    }
+
+    .servicii-foto-table-cell:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 100%;
+        padding-right: 10px;
+        text-align:left;
+        font-weight: bold;
+        content: attr(data-title);
+    }
+
+    .transpose-table {
+        display: flex;
+        overflow: hidden;
+        background: none;
+        border: 0;
+    }
+      
+    .transpose-table thead {
+        display: flex;
+        flex-shrink: 0;
+        min-width: min-content;
+        border-bottom: 0;
+        border-top: 0;
+    }
+    
+    .transpose-table tbody {
+        display: flex;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .transpose-table tr {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+        flex-shrink: 0;
+    }
+    
+    .transpose-table td,
+    .transpose-table th {
+        display: block;
+        border: 1px solid #f1d5d5;
+    }
+    
+    .transpose-table td {
+        background-image: none !important;
+        border-left: 0;
+        /* border: 1px solid #f1d5d5; */
+    }
+    
+    .transpose-table th:not(:last-child),
+    .transpose-table td:not(:last-child) {
+        border-bottom: 0;
+    }
+}

@@ -14,7 +14,6 @@
     ul.menu{
       position: absolute;
     display: none;
-    mask-position:top;
   }
 
     #home:hover{
@@ -45,26 +44,23 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     animation: clip-fade 1s forwards;
-    /* -webkit-mask-size:100% 200%;
-    mask-size:100% 200%; */
-    /* -webkit-mask-position: 0% 100%;
-    mask-position: 0% 100%; */
+    -webkit-mask-size:100% 200%;
+    mask-size:100% 200%; 
+    -webkit-mask-position: 0% 100%;
+    mask-position: 0% 100%;
   }
+
   
   @keyframes clip-fade {
     0% {
-      -webkit-mask-size: 100% 0%;
-      mask-size: 100% 0%;
-    }
-    50% {
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 200%;
+      -webkit-mask-position: 0% 100%;
+      mask-position: 0% 100%;
     }
     100% {
-      -webkit-mask-size: 100% 200%;
-      mask-size: 100% 200%;
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
     }
-  }
+  } 
 
 ul.menu li:hover > ul {
     mask-position: top;

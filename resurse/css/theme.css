@@ -1,11 +1,8 @@
-
-
-
 body.dark{
-    --background-color: #808080;
-    --menu-links: black;
-    --menu-color: #CD853F;
-    --text-color: #6495ED ;
+    --background-color: rgb(156, 177, 216);
+    --menu-links: #FF6347;
+    --menu-color: rgba(111, 111, 219, 0.904);
+    --text-color: purple ;
     --footer-color: #FF6347 ;
 
     
@@ -24,26 +21,4 @@ body.dark{
         background-color: var(--footer-color);
     }
    
-}
-
-body.girly{
-    --background-color: #4169E1;
-    --menu-links: #FFDAB9;
-    --text-color: #663399 ;
-    --menu-color: #DDA0DD;
-    --footer-color: #DB7093 ;
-    
-    background-color: var( --background-color);
-    color: var(--text-color);
-    ul.menu > li {
-        background-color: var(--menu-color);
-    }
-
-    ul.menu li a{
-        color: var(--menu-links);
-    }
-
-    footer{
-        background-color: var(--footer-color);
-    }
 }

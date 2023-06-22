@@ -18,6 +18,10 @@
 
     }
 
+    #banner {
+        animation: bannerAnimation 0s forwards;
+    }
+
     #schedule {
         overflow: hidden;
         white-space: nowrap;
